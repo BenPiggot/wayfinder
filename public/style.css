@@ -1,0 +1,296 @@
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+     margin: 0px;
+     padding: 0px;
+}
+
+html,body{
+    height:100%;
+}
+
+/*FRONT PAGE*/
+
+.white-text {
+  color: white;
+}
+
+.black-text {
+  color: black;
+}
+
+.caption-container {
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  min-height: 100%;
+  width: 37%;
+  z-index: 10;
+}
+
+.front-a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.front-page-buttons {
+  text-align: left;
+  margin-top: 1em;
+}
+
+.front-page-buttons > button {
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
+/*CAROUSEL EFFECT */
+
+.carousel,.item,.active {
+    height:100%;
+}
+
+.carousel-inner {
+    height:100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 7%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
+  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+.carousel-control.right {
+  right: 0;
+  left: auto;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
+  background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+/*FULL PAGE MAP */
+
+#googleMap {
+    min-height: 100%;
+    z-index: 0;
+    margin-bottom: -40px;
+}
+
+#googleMapSmall {
+    min-height: 100%;
+    z-index: 0;
+    margin-bottom: -40px;
+}
+
+.shadowCover {
+    position: absolute;
+    top: 0em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.62);
+}
+
+/*FRONT PAGE*/
+#front-page {
+  background-image: url("http://images.trvl-media.com/media/content/shared/images/travelguides/destination/179992/Barcelona-52305.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.caption {
+  position: relative;
+  margin-top: 0;
+  height: 500px;
+  min-width: 100%;
+  padding-left: 3%;
+  padding-top: 1%;
+  z-index: 10;
+}
+
+.white-text {
+  color: white;
+}
+
+.caption-container {
+  min-height: 100%;
+  width: 38%;
+  z-index: 10;
+}
+
+h1 .oswald {
+  font-family: 'Oswald';
+}
+
+
+h1, h2, h3, h4 {
+  font-weight: 200;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  font-weight: 200;
+}
+
+
+/*CREATE PAGE */
+#create-page {
+  background-color: #eee;
+}
+
+#container1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  float: left;
+  height: 700px;
+  width: 45%;
+}
+
+#container2 {
+  float: right;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  height: 500px;
+    width: 52%;
+}
+
+#create-map-header {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 0em;
+  margin-top: 0em;
+}
+
+#create-page-hr {
+  border-top: none;
+  border-bottom: 1px solid #ccc;
+  margin-top: 0.7em;
+  margin-bottom: -0.2em;
+}
+
+.create-page-input {
+  margin-top: 1.2em;
+}
+
+#create-page-input-last {
+  margin-top: 0.8em;
+}
+
+.top-margin {
+  margin-top: 4%;
+}
+
+#create-text-area {
+  height: 100px;
+  width: 350px;
+}
+
+#create-button {
+  margin-top: 0.5em;
+}
+
+#return-home {
+  margin-top: 1.5em;
+}
+
+/*LOGIN PAGE*/
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.form-signin-heading,
+.checkbox {
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  font-weight: normal;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+
+input[type="text"] {
+  margin-bottom: 0em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+  margin-bottom: 1em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/*SIGN-UP PAGE*/
+
+#greyish {
+  background-color: #eee;
+}
+
+.legend-header {
+  font-size: 32px;
+  font-weight: 200;
+}
+
+.container-margin {
+  margin-top: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.label-weight {
+  font-weight: 200;
+}
+
+.normal-input {
+  border-radius: 0;
+  height: 33px;
+}
+footer {
+    margin: 50px 0;
+}
