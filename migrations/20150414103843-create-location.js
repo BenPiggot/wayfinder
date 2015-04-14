@@ -1,27 +1,33 @@
 "use strict";
 module.exports = {
   up: function(migration, DataTypes, done) {
-    migration.createTable("maps", {
+    migration.createTable("locations", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      mapName: {
+      locationName: {
         type: DataTypes.STRING
       },
+      locationDescription: {
+        type: DataTypes.TEXT
+      },
       city: {
+        type: DataTypes.STRING
+      },
+      streetAddress: {
         type: DataTypes.STRING
       },
       country: {
         type: DataTypes.STRING
       },
-      description: {
-        type: DataTypes.TEXT
+      latitude: {
+        type: DataTypes.FLOAT
       },
-      userId: {
-        type: DataTypes.INTEGER
+      longitude: {
+        type: DataTypes.FLOAT
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +40,6 @@ module.exports = {
     }).done(done);
   },
   down: function(migration, DataTypes, done) {
-    migration.dropTable("maps").done(done);
+    migration.dropTable("locations").done(done);
   }
 };

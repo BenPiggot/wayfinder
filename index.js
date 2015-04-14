@@ -7,6 +7,7 @@ var narrativesCtrl = require("./controllers/narratives");
 var session = require('express-session');
 var bodyParser = require("body-parser");
 var flash = require('connect-flash');
+var geocoder = require('geocoder');
 
 
 app.use(express.static(__dirname + "/public"));

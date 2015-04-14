@@ -7,10 +7,16 @@ var request = require('request');
 var db = require('../models');
 
 router.get("/:id", function(req, res) {
-    res.render("narratives/journals")
+  var localId = parseInt(req.params.id);
+  db.map.find({
+    where:{id:localId},
+    include:[db.location]
+  }).then(function(map){
+    res.render("narratives/journals", {map: map});
+  });
 });
 
 
-
+// "narratives/journals"
 
 module.exports = router;

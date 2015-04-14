@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 <body id="create-page">
   <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div>
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -76,11 +76,20 @@
   </div>
 
   <div id="container2">
-    <div id="googleMap"></div>
+    <div id="googleMap2"></div>
 
   </div>
 
 </div>
+
+    <script>
+        var lng = <%- JSON.stringify(mapList[localId - 1].dataValues.longitude) %>;
+        var lat = <%- JSON.stringify(mapList[localId - 1].dataValues.latitude) %>;
+        console.log(lat)
+        console.log(lng)
+        initialize2(lat,lng)
+    </script>
+
 </body>
 
 

@@ -57,11 +57,24 @@
     <div id="highlights">
     <h2>Recent Highlights</h2>
     <hr id="highlights-hr">
+    <% if (mapList.length > 6) { %>
       <% for (var i = mapList.length - 1; mapList.length - 6 < i; i--) { %>
           <% if (mapList[i].mapName) { %>
               <a href="/narratives/<%= mapList[i].id %>"><h4 class="white-text"> <%= mapList[i].mapName %>.
               <small class="white-text">Read more...</small></h4></a>
             <% } %>
+     <% } %>
+     <% } else { %>
+         <% if (mapList == undefined) { %>
+          <p> No items to list </p>
+          <% } else {%>
+            <% for (var i = 0; i < mapList.length; i++) { %>
+              <% if (mapList[i].mapName) { %>
+                    <a href="/narratives/<%= mapList[i].id %>"><h4 class="white-text"> <%= mapList[i].mapName %>.
+                    <small class="white-text">Read more...</small></h4></a>
+                <% } %>
+           <% } %>
+        <% } %>
      <% } %>
     </div>
 <!--     <div id="highlights-right">

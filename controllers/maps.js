@@ -10,6 +10,7 @@ var db = require('../models')
 router.get("/", function(req, res) {
     db.map.findAll().then(function(map) {
     var locals = {mapList: map}
+    // console.log(locals.mapList[1].description)
       res.render("maps/explore", locals);
     })
 });
@@ -25,7 +26,14 @@ router.get("/create", function(req, res) {
   });
 
 router.get("/locations/:id", function(req, res) {
-  res.render("maps/locations",{localId:req.params.id})
+  var localId = parseInt(req.params.id);
+  console.log(localId)
+  db.map.findAll().then(function(map) {
+    var locals = {mapList:map, localId:req.params.id}
+    console.log(locals.localId - 1)
+    console.log(locals.mapList[localId - 1].dataValues.longitude)
+    res.render("maps/locations",locals)
+  });
 });
 
 router.post("/", function(req, res) {

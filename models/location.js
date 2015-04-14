@@ -1,4 +1,7 @@
 "use strict";
+
+var geocoder = require('geocoder');
+
 module.exports = function(sequelize, DataTypes) {
   var location = sequelize.define("location", {
     locationName: DataTypes.STRING,
@@ -6,12 +9,22 @@ module.exports = function(sequelize, DataTypes) {
     city: DataTypes.STRING,
     streetAddress: DataTypes.STRING,
     country: DataTypes.STRING,
-    latitude: DataTypes.INTEGER,
-    longitude: DataTypes.INTEGER
+    latitude: DataTypes.FLOAT,
+    longitude: DataTypes.FLOAT
   }, {
     classMethods: {
       associate: function(models) {
         models.location.hasMany(models.map)
+      }
+    },
+    hooks: {
+      beforeCreate: function(locations, options, fn) {
+        geocoder.geocode(locations.locationName, function(err,data) {
+          if (err) { fn(err,null) }
+          locations.latitude = data.results[0].geometry.location.lat;
+          locations.longitude = data.results[0].geometry.location.lng;
+          fn(null,locations);
+        })
       }
     }
   });
