@@ -22,7 +22,11 @@
       <ul class="nav navbar-nav">
         <li><a href="/maps">Explore</a></li>
         <li><a href="/maps/create">Create</a></li>
-        <li><a href="/auth/logout">Log Out</a></li>
+        <% if (loggedIn) { %>
+          <li><a href="/auth/logout">Log Out</a></li>
+        <% } else { %>
+           <li><a href="/auth">Log In </a></li>
+        <% } %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -49,6 +53,7 @@
 <h1 id="create-map-header"> Create your Map Below</h1>
 <hr id="create-page-hr">
   <div id="container1">
+  <% include ../partials/alerts.ejs %>
     <form action="/maps" method="post">
       <div class="form-group">
         <h4>Map Name </h4>
@@ -62,7 +67,6 @@
         <h4 id="create-page-input-last">Tags </h4>
           <input id="front-page-input" class="label-weight" type="text" name="" placeholder="Tag Names">
       </div>
-      <input type="hidden" value="<%= loggedIn.id %>" name="loggedIn.id">
       <input type="submit" id="create-button" class="white-text btn btn-info" value="Create Your Map">
   </form>
   </div>

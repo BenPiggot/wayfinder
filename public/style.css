@@ -122,6 +122,43 @@ footer {
     background-color: rgba(0,0,0,0.62);
 }
 
+#highlights {
+  float: left;
+  margin-top: 4em;
+  margin-left: 5%;
+  height: 50%;
+  width: 25%;
+  padding: 1%;
+  color: white;
+  font-size: 1.2em;
+
+}
+
+#highlights-right {
+  float: right;
+  margin-top: 4em;
+  margin-right: 5%;
+  height: 50%;
+  width: 25%;
+  padding: 1%;
+  color: white;
+  font-size: 1.2em;
+
+}
+
+#highlights-hr {
+  margin-bottom: 1em;
+  margin-top: -0.3em;
+}
+
+#highlights>a:hover {
+  color: white;
+}
+
+.smaller {
+  font-size: 0.6em;
+}
+
 /*FRONT PAGE*/
 #front-page {
   background-image: url("http://images.trvl-media.com/media/content/shared/images/travelguides/destination/179992/Barcelona-52305.jpg");
@@ -142,6 +179,11 @@ footer {
 .white-text {
   color: white;
 }
+
+.light-grey-text {
+  color: #aaa;
+}
+
 
 .caption-container {
   min-height: 100%;
@@ -216,7 +258,7 @@ h5 {
   width: 350px;
 }
 
-#create-button {
+.create-button {
   margin-top: 0.5em;
 }
 
@@ -264,6 +306,17 @@ input[type="password"] {
   margin-bottom: 1em;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.alert-box {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  margin: 1% auto;
+}
+
+#login-name {
+  color: white;
 }
 
 /*SIGN-UP PAGE*/

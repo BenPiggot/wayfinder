@@ -6,7 +6,7 @@ var request = require('request');
 
 var db = require('../models');
 
-router.get("/", function(req, res) {
+router.get("/:id", function(req, res) {
     res.render("narratives/journals")
 });
 

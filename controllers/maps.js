@@ -6,14 +6,20 @@ var request = require('request');
 
 var db = require('../models')
 
+
 router.get("/", function(req, res) {
-    res.render("maps/explore")
+    db.map.findAll().then(function(map) {
+    var locals = {mapList: map}
+      res.render("maps/explore", locals);
+    })
 });
+
 
 router.get("/create", function(req, res) {
   if (req.getUser()) {
     res.render("maps/create")
   } else {
+    req.flash('danger','You must be logged in to create a map.');
     res.redirect("/maps")
     }
   });
@@ -25,14 +31,14 @@ router.get("/locations/:id", function(req, res) {
 router.post("/", function(req, res) {
     var user = req.getUser();
     if(user){
-      db.map.findOrCreate({where: {city: req.body.city, country: req.body.country,
+      db.map.findOrCreate({where: {mapName: req.body.mapName, city: req.body.city, country: req.body.country,
         description: req.body.description, userId: user.id}}).spread(function(map, created) {
           map.save().then(function() {
             res.redirect("maps/locations/" + map.id)
         });
       });
     }else{
-      res.send('you must be logged in');
+      req.flash('danger','You must be logged in to create a map.');
     }
 });
 

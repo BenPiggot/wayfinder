@@ -41,7 +41,7 @@ router.post('/',function(req,res){
                         lastName: user.lastName
                     };
                     console.log('logged in!');
-                    req.flash('success','You have been logged in.');
+                    // req.flash('success','You have been logged in.');
                     res.redirect('/maps');
                 }
                 else{
