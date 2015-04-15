@@ -59,10 +59,11 @@
     <div id="highlights">
         <h2>My Maps</h2>
         <hr id="highlights-hr">
+        <% for (var i = map.dataValues.maps.length - 1; i > 0; i--) { %>
+          <a class="white-text" href="/maps/locations/<%= map.dataValues.maps[i].id %>"><h4 class="white-text"> <%= map.dataValues.maps[i].mapName %>.</a>
+        <% } %>
     </div>
-<!--     <div id="highlights-right">
-    <h2>Tell Your Story</h2>
-    <hr id="highlights-hr"> -->
+
 </div>
 
 </body>

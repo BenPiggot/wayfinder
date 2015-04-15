@@ -248,6 +248,27 @@ h5 {
   margin-top: 0em;
 }
 
+.show-text {
+   position: absolute;
+   top: 12%;
+   left: 5%;
+   width: 25%;
+   z-index: 49;
+   background-color: white;
+   opacity: 0.6;
+   border-radius: 8px;
+   padding-left: 1em;
+   padding-right: 1em;
+   text-align: left;
+   color: black;
+   cursor: pointer;
+}
+
+.show-text h1 {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
 #create-page-hr {
   border-top: none;
   border-bottom: 1px solid #ccc;

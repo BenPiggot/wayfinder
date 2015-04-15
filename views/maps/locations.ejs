@@ -54,7 +54,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-<h1 id="create-map-header"> Add Your Locations</h1>
+<h1 id="create-map-header"> <%- map.mapName %> </h1>
 <hr id="create-page-hr">
   <div id="container1">
     <form action="/maps/locations/<%= localId %>" method="post">
@@ -78,18 +78,19 @@
   </div>
 
   <div id="container2">
-    <div id="googleMap2"></div>
+    <div id="googleMap3"></div>
 
   </div>
 
 </div>
 
     <script>
-        var lng = <%- JSON.stringify(mapList[localId - 1].dataValues.longitude) %>;
-        var lat = <%- JSON.stringify(mapList[localId - 1].dataValues.latitude) %>;
-        console.log(lat)
-        console.log(lng)
-        initialize2(lat,lng)
+    initialize3(
+      <%- map.latitude %>,
+      <%- map.longitude %>,
+      <%- JSON.stringify(map.locations) %> //array of markers
+    );
+
     </script>
 
 </body>

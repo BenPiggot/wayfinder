@@ -8,7 +8,13 @@ var db = require('../models');
 
 
 router.get("/usermaps", function(req, res) {
-  res.render("narratives/usermaps");
+   db.user.find({
+    where:{id:req.getUser().id},
+    include:[db.map]
+  }).then(function(map){
+    console.log(map.maps[0])
+  res.render("narratives/usermaps", {map: map});
+  })
 })
 
 router.get("/:id", function(req, res) {
@@ -17,10 +23,11 @@ router.get("/:id", function(req, res) {
     where:{id:localId},
     include:[db.location]
   }).then(function(map){
-    console.log(map.locations[0])
+    console.log(map)
     res.render("narratives/journals", {map: map});
   });
 });
+
 
 
 

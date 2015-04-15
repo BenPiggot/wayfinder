@@ -26,15 +26,16 @@ router.get("/create", function(req, res) {
   });
 
 router.get("/locations/:id", function(req, res) {
-  var localId = parseInt(req.params.id);
-  console.log(localId)
-  db.map.findAll().then(function(map) {
-    var locals = {mapList:map, localId:req.params.id}
-    console.log(locals.localId - 1)
-    console.log(locals.mapList[localId - 1].dataValues.longitude)
-    res.render("maps/locations",locals)
+var localId = parseInt(req.params.id);
+  db.map.find({
+    where:{id:localId},
+    include:[db.location]
+  }).then(function(map){
+    console.log(map)
+    res.render("maps/locations", {map: map, localId: req.params.id});
   });
 });
+
 
 router.post("/", function(req, res) {
     var user = req.getUser();
@@ -47,6 +48,7 @@ router.post("/", function(req, res) {
       });
     }else{
       req.flash('danger','You must be logged in to create a map.');
+      res.redirect('/');
     }
 });
 
