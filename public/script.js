@@ -53,7 +53,8 @@ function initialize2(lat, lng) {
   // google.maps.event.addDomListener(window, 'load', initialize2);
 
 function initialize3(lat,lng,markers) {
-    console.log('coords',lat,lng);
+    // console.log(markers[0].locationDescription);
+    // console.log(markers[0].longitude);
     var mapProp2 = {
     center: new google.maps.LatLng(lat, lng),
     zoom: 11,
@@ -67,13 +68,37 @@ function initialize3(lat,lng,markers) {
 
     map2 = new google.maps.Map(document.getElementById("googleMap3"), mapProp2);
 
-    markers.forEach(function(marker){
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(marker.latitude, marker.longitude),
-        map: map2,
-        icon: '/greypin.png'
+    if (markers) {
+    markers.forEach(function(item){
+        console.log(item.locationName, item.locationDescription)
+         var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(item.latitude, item.longitude),
+          map: map2,
+          icon: '/greypin.png'
+        });
+        var name = item.locationName
+        var description = item.locationDescription
+        // console.log('<b>' + trial + '</b>' + "-" + " " + trial2)
+        google.maps.event.addListener(marker, 'click', function() {
+        console.log(item.locationName, item.locationDescription)
+
+          infowindow = new google.maps.InfoWindow({
+              content: '<b>' + name + '</b>' + ":" + " " + description
+          });
+          infowindow.open(map2, marker);
+        });
       });
-      console.log(marker.latitude);
-    })
-}
+    }
+  }
+
+
+
+
+
+  // google.maps.event.addListener(dicksMarker, 'click', function() {
+  //   infowindow.close();
+  //   infowindow = new google.maps.InfoWindow({
+  //   content: contentString[14]
+  //   });
+  //   infowindow.open(map,dicksMarker);
 

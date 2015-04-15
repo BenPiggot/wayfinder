@@ -12,6 +12,7 @@ router.get("/:id", function(req, res) {
     where:{id:localId},
     include:[db.location]
   }).then(function(map){
+    console.log(map.locations[0])
     res.render("narratives/journals", {map: map});
   });
 });
