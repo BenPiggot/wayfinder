@@ -6,6 +6,11 @@ var request = require('request');
 
 var db = require('../models');
 
+
+router.get("/usermaps", function(req, res) {
+  res.render("narratives/usermaps");
+})
+
 router.get("/:id", function(req, res) {
   var localId = parseInt(req.params.id);
   db.map.find({
@@ -16,6 +21,8 @@ router.get("/:id", function(req, res) {
     res.render("narratives/journals", {map: map});
   });
 });
+
+
 
 
 // "narratives/journals"
