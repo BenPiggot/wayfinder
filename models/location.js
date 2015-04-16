@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     hooks: {
       beforeCreate: function(locations, options, fn) {
-        geocoder.geocode(locations.locationName + ", " + locations.city, function(err,data) {
+        geocoder.geocode(locations.locationName + ", " + locations.streetAddress + ", " + locations.city, function(err,data) {
           if (err) { fn(err,null) }
           locations.latitude = data.results[0].geometry.location.lat;
           locations.longitude = data.results[0].geometry.location.lng;

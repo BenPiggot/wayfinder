@@ -25,6 +25,27 @@ router.get("/create", function(req, res) {
     }
   });
 
+router.get("/about", function(req, res) {
+    res.render("maps/about")
+    });
+
+router.get("/edit/:id", function(req, res) {
+  if (req.getUser()) {
+    var localId = parseInt(req.params.id);
+     db.map.find({
+      where:{id:localId},
+      include:[db.location]
+  }).then(function(map){
+    console.log(map)
+    res.render("maps/edit", {map: map, localId: req.params.id});
+  })
+  } else {
+    req.flash('danger','You must be logged in to edit a map.');
+    res.redirect("/maps")
+    }
+  });
+
+
 router.get("/locations/:id", function(req, res) {
 if (req.getUser()) {
 var localId = parseInt(req.params.id);
@@ -83,10 +104,25 @@ router.post('/delete/:id',function(req,res){
         res.redirect("/narratives/usermaps")
     });
     }else{
-      req.flash('danger','You must be logged in to create a map.');
+      req.flash('danger','You cannot delete this map.');
       res.redirect('/');
     }
 })
+
+router.post('/edit/:id', function(req, res) {
+  db.map.find({ where: { id: req.params.id} }).then(function(map){
+    console.log(map.dataValues)
+    console.log(map.mapName)
+    console.log(req.body.mapName)
+      map.mapName = req.body.mapName
+      map.description = req.body.description
+      map.save().then(function() {
+    res.redirect("/maps/locations/" + req.params.id)
+  });
+  });
+})
+
+
 
 // router.post("/", function(req, res) {
 //   db.map.findOrCreate({where: {mapName: req.body.mapName, city: req.body.city,

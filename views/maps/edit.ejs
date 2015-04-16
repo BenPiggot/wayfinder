@@ -44,33 +44,39 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-<h1 id="create-map-header"> Create your Map Below</h1>
+<h1 id="create-map-header"> Edit your Map</h1>
 <hr id="create-page-hr">
   <div id="container1">
   <% include ../partials/alerts.ejs %>
-    <form action="/maps" method="post">
+    <form action="/maps/edit/<%= localId %>" method="post">
       <div class="form-group">
-        <h4>Map Name </h4>
+        <h4>Edit Map Name </h4>
           <input id="front-page-input" class="label-weight" type="text" name="mapName" placeholder="Your Map Name">
-        <h4 class="create-page-input">City </h4>
-        <input id="front-page-input" class="label-weight" type="text" name="city" placeholder="City Name">
-        <h4 class="create-page-input">Country</h4>
-        <input id="front-page-input" class="label-weight" type="text" name="country" placeholder="Country">
-        <h4 class="create-page-input">Map Description</h4>
+        <h4 class="create-page-input">Edit Map Description</h4>
           <textarea type="text" id="create-text-area" class="label-weight"  name="description" class="form-control" placeholder="Tell Us About Your Map"></textarea>
         <h4 id="create-page-input-last">Tags </h4>
           <input id="front-page-input" class="label-weight" type="text" name="" placeholder="Tag Names">
       </div>
-      <input type="submit" id="create-button" class="add-buttons white-text btn btn-info" value="Create Your Map">
+      <input type="submit" id="create-button" class="add-buttons white-text btn btn-info" value="Make Changes">
   </form>
   </div>
 
   <div id="container2">
-    <div id="googleMap"></div>
+    <div id="googleMap3"></div>
 
   </div>
 
 </div>
+
+ <script>
+    initialize3(
+      <%- map.latitude %>,
+      <%- map.longitude %>,
+      <%- JSON.stringify(map.locations) %> //array of markers
+    );
+
+    </script>
+
 </body>
 
 

@@ -31,18 +31,8 @@
            <li><a href="/auth/newuser">New Account</a></li>
       <% } %>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+          <li><a href="/maps/about">About</a></li>
+
       </ul>
       <form class="navbar-form navbar-right" role="search" action="/narratives/search" method="get">
         <div class="form-group">
@@ -72,13 +62,16 @@
       </div>
       <input type="hidden" value="" name="">
       <input type="submit" class="add-buttons create-button white-text btn btn-info" value="Add a Location">
-      <a href="/narratives/<%= localId %>" class="add-buttons  create-button white-text btn btn-info">
+      <a href="/narratives/<%= localId %>" class="add-buttons create-button white-text btn btn-info">
           See Completed Map</a>
     </form>
 
-    <form action="/maps/delete/<%= localId %>" method="post">
-        <input type="submit" id="delete-button" class="create-button btn btn-danger white-text" value="Delete Map">
+    <form id="delete-form" action="/maps/delete/<%= localId %>" method="post">
+        <input type="submit" class="change-buttons create-button btn btn-danger white-text" value="Delete Map">
     </form>
+
+     <a id="delete-form" href="/maps/edit/<%= localId %>" class="change-buttons create-button btn btn-danger white-text" >
+          Edit Map</a>
 
   </div>
 

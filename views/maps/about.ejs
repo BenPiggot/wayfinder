@@ -45,16 +45,12 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-    <div id="highlights">
-        <h2>Search Results</h2>
-        <hr id="highlights-hr">
-        <% for (var i = 0; i < map.length; i++) { %>
-          <a class="inner-a white-text" href="/narratives/<%= map[i].id %>"><h4 class="white-text"> <%= map[i].mapName %></a>
-        <% } %>
-    </div>
-    </div>
-<% include ../partials/alerts.ejs %>
 
+    <div id="about">
+        <h2>About Wayfinder</h2>
+        <hr id="about-hr">
+
+    </div>
+
+</div>
 </body>
-
-<% include ../partials/footer %>

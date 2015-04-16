@@ -1,5 +1,6 @@
 $(document).ready(function() {
    $('.carousel').carousel('pause');
+
 });
 
 
@@ -73,7 +74,9 @@ function initialize3(lat,lng,markers) {
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.close();
           infowindow = new google.maps.InfoWindow({
-              content: '<div id="pop-up">' + '<b>' + name + '</b>' + ":" + " " + description + '</div>'
+              content: '<div id="pop-up">' + '<b>' + name + '</b>' + ":" + " " + description + '<br>'
+                      // + '<a href="http://www.nytimes.com"><i class="smaller-icon glyphicon glyphicon-pencil"></i></a>'
+                      + '</div>'
           });
           infowindow.open(map2, marker);
         });
@@ -81,21 +84,18 @@ function initialize3(lat,lng,markers) {
     }
   }
 
-// document.addEventListener('DOMContentLoaded', function() {
-// $('.delete-button').on('click', function(e) {
-//       e.preventDefault();
-//       var delBtn = $(this);
-//       var myUrl = delBtn.attr('href');
-//       console.log(myUrl)
-//     $.ajax({
-//         method: 'DELETE'
-//         url: myUrl
-//         }).done(function() {
-//           delBtn.remove();
-//         })
-//       })
-// });
 
-
+   $('.delete-button').on('click', function(e) {
+      e.preventDefault();
+      var delBtn = $(this);
+      var myUrl = delBtn.attr('href');
+      console.log(myUrl)
+    $.ajax({
+        method: 'DELETE',
+        url: myUrl
+        }).done(function() {
+          delBtn.remove();
+        })
+      })
 
 
