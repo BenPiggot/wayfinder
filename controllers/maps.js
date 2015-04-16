@@ -10,7 +10,7 @@ var db = require('../models')
 router.get("/", function(req, res) {
     db.map.findAll().then(function(map) {
     var locals = {mapList: map}
-    console.log(locals.mapList[1])
+    // console.log(locals.mapList[1])
       res.render("maps/explore", locals);
     })
 });
