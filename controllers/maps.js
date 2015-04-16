@@ -26,6 +26,7 @@ router.get("/create", function(req, res) {
   });
 
 router.get("/locations/:id", function(req, res) {
+if (req.getUser()) {
 var localId = parseInt(req.params.id);
   db.map.find({
     where:{id:localId},
@@ -34,6 +35,10 @@ var localId = parseInt(req.params.id);
     console.log(map)
     res.render("maps/locations", {map: map, localId: req.params.id});
   });
+  } else {
+    req.flash('danger','You must be logged in to edit a map.');
+    res.redirect("/maps")
+    }
 });
 
 
@@ -46,7 +51,7 @@ router.post("/", function(req, res) {
             res.redirect("maps/locations/" + map.id)
         });
       });
-    }else{
+    } else{
       req.flash('danger','You must be logged in to create a map.');
       res.redirect('/');
     }
@@ -55,6 +60,7 @@ router.post("/", function(req, res) {
 
 
 router.post("/locations/:id", function(req, res) {
+  if (req.getUser()) {
   var id = req.params.id
     db.map.find({where: {id: id}}).then(function(map) {
       map.createLocation({
@@ -65,12 +71,21 @@ router.post("/locations/:id", function(req, res) {
           res.redirect("/maps/locations/" + id)
       });
     });
+   }else{
+      req.flash('danger','You must be logged in to create a map.');
+      res.redirect('/');
+    }
   });
 
 router.post('/delete/:id',function(req,res){
+    if (req.getUser()) {
     db.map.destroy({where: {id: req.params.id}}).then(function(){
         res.redirect("/narratives/usermaps")
     });
+    }else{
+      req.flash('danger','You must be logged in to create a map.');
+      res.redirect('/');
+    }
 })
 
 // router.post("/", function(req, res) {
