@@ -100,6 +100,14 @@ html,body{
   background-repeat: repeat-x;
 }
 
+body > div.shadowCover > nav{
+  border-radius: 0;
+}
+
+#create-page > nav {
+  border-radius: 0;
+}
+
 footer {
     margin: 50px 0;
 }
@@ -391,11 +399,30 @@ input[type="password"] {
   border-radius: 0;
   height: 33px;
 }
+
 footer {
     margin: 50px 0;
 }
 
-
-body > div.shadowCover > nav{
-  border-radius: 0;
+#delete-button {
+  position: absolute;
+  top: 42.9em;
+  left: 25.3em;
 }
+
+#pop-up {
+
+    border-radius: 3px;
+    padding: 0.2em;
+    font-size: 1.1em;
+    max-width: 350px;
+}
+
+
+.smaller-icon {
+  font-size: 0.75em;
+  color: #999;
+  float: right;
+  line-height: 2em;
+}
+

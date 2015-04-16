@@ -67,11 +67,11 @@ router.post("/locations/:id", function(req, res) {
     });
   });
 
-// router.post('/delete/:id',function(req,res){
-//     db.map.destroy({where: {id: req.params.id}}).then(function(){
-//         res.redirect("/narratives/usermaps")
-//     });
-// })
+router.post('/delete/:id',function(req,res){
+    db.map.destroy({where: {id: req.params.id}}).then(function(){
+        res.redirect("/narratives/usermaps")
+    });
+})
 
 // router.post("/", function(req, res) {
 //   db.map.findOrCreate({where: {mapName: req.body.mapName, city: req.body.city,

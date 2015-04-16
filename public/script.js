@@ -58,6 +58,8 @@ function initialize3(lat,lng,markers) {
 
     map2 = new google.maps.Map(document.getElementById("googleMap3"), mapProp2);
 
+    var infowindow = new google.maps.InfoWindow({});
+
     if (markers) {
     markers.forEach(function(item){
         console.log(item.locationName, item.locationDescription)
@@ -68,12 +70,10 @@ function initialize3(lat,lng,markers) {
         });
         var name = item.locationName
         var description = item.locationDescription
-        // console.log('<b>' + trial + '</b>' + "-" + " " + trial2)
         google.maps.event.addListener(marker, 'click', function() {
-        console.log(item.locationName, item.locationDescription)
-
+          infowindow.close();
           infowindow = new google.maps.InfoWindow({
-              content: '<b>' + name + '</b>' + ":" + " " + description
+              content: '<div id="pop-up">' + '<b>' + name + '</b>' + ":" + " " + description + '</div>'
           });
           infowindow.open(map2, marker);
         });
@@ -81,8 +81,7 @@ function initialize3(lat,lng,markers) {
     }
   }
 
-
-
+// document.addEventListener('DOMContentLoaded', function() {
 // $('.delete-button').on('click', function(e) {
 //       e.preventDefault();
 //       var delBtn = $(this);
@@ -95,5 +94,8 @@ function initialize3(lat,lng,markers) {
 //           delBtn.remove();
 //         })
 //       })
+// });
+
+
 
 

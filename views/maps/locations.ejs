@@ -71,13 +71,15 @@
             placeholder="Tell Us About This Place"></textarea>
       </div>
       <input type="hidden" value="" name="">
-      <input type="submit" class="create-button white-text btn btn-info" value="Add a Location">
-      <a href="/narratives/<%= localId %>" class="create-button white-text btn btn-info">See Completed Map</a>
-      <!-- <a href="/maps/delete/<%= localId %>" class="delete-button create-button white-text btn btn-danger">Delete</a> -->
+      <input type="submit" class="add-buttons create-button white-text btn btn-info" value="Add a Location">
+      <a href="/narratives/<%= localId %>" class="add-buttons  create-button white-text btn btn-info">
+          See Completed Map</a>
     </form>
-<!--   <form id="delete-button" action="/maps/delete/<%= localId %>" method="post">
-      <input type="submit" class="create-button btn btn-danger white-text" value="Delete">
-  </form> -->
+
+    <form action="/maps/delete/<%= localId %>" method="post">
+        <input type="submit" id="delete-button" class="create-button btn btn-danger white-text" value="Delete">
+    </form>
+
   </div>
 
   <div id="container2">
