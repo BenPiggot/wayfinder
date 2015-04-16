@@ -34,6 +34,10 @@ html,body{
   text-decoration: none;
 }
 
+.inner-a:hover {
+  color: white;
+}
+
 .front-page-buttons {
   text-align: left;
   margin-top: 1em;
@@ -255,7 +259,7 @@ h5 {
    width: 25%;
    z-index: 49;
    background-color: white;
-   opacity: 0.6;
+   opacity: 0.7;
    border-radius: 8px;
    padding-left: 1em;
    padding-right: 1em;
@@ -360,6 +364,14 @@ input[type="password"] {
   background-color: #eee;
 }
 
+.fieldset-margin {
+  margin-top: -0.5em;
+}
+
+#sign-up-button {
+  margin-top: 0.7em;
+}
+
 .legend-header {
   font-size: 32px;
   font-weight: 200;
@@ -381,4 +393,9 @@ input[type="password"] {
 }
 footer {
     margin: 50px 0;
+}
+
+
+body > div.shadowCover > nav{
+  border-radius: 0;
 }

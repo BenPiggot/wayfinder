@@ -21,6 +21,11 @@ router.post("/newuser", function(req, res) {
       user.save().then(function() {
           res.redirect("/auth");
     })
+  }).catch(function(error){
+    if (error) {
+        req.flash('danger','Please enter a valid email and password.')
+        res.redirect('/auth/newuser')
+    }
   })
 });
 

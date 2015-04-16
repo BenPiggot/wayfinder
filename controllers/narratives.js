@@ -7,13 +7,30 @@ var request = require('request');
 var db = require('../models');
 
 
+router.get("/search", function(req, res) {
+  console.log("Awesome")
+  var query = '%'+req.query.q+'%'
+  db.map.findAll({
+    where:{
+      $or:{
+        city: {$iLike: query},
+        mapName: {$iLike: query}
+      }
+    }
+  }).then(function(map){
+    var locals = {map: map}
+    res.render("narratives/search", locals)
+  })
+})
+
+
 router.get("/usermaps", function(req, res) {
    db.user.find({
     where:{id:req.getUser().id},
     include:[db.map]
   }).then(function(map){
     console.log(map.maps[0])
-  res.render("narratives/usermaps", {map: map});
+    res.render("narratives/usermaps", {map: map});
   })
 })
 
@@ -27,6 +44,7 @@ router.get("/:id", function(req, res) {
     res.render("narratives/journals", {map: map});
   });
 });
+
 
 
 

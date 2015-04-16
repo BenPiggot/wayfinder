@@ -46,9 +46,9 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right" role="search">
+      <form class="navbar-form navbar-right" role="search" action="/narratives/search" method="get">
         <div class="form-group">
-          <input type="text" class="form-control normal-input" placeholder="Search">
+          <input type="text" class="form-control normal-input" name="q" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
@@ -60,7 +60,7 @@
         <h2>My Maps</h2>
         <hr id="highlights-hr">
         <% for (var i = map.dataValues.maps.length - 1; i > 0; i--) { %>
-          <a class="white-text" href="/maps/locations/<%= map.dataValues.maps[i].id %>"><h4 class="white-text"> <%= map.dataValues.maps[i].mapName %>.</a>
+          <a class="inner-a white-text" href="/maps/locations/<%= map.dataValues.maps[i].id %>"><h4 class="white-text"> <%= map.dataValues.maps[i].mapName %></a>
         <% } %>
     </div>
 

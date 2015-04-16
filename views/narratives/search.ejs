@@ -1,5 +1,7 @@
 <% include ../partials/header %>
 <body>
+<div id="googleMap"></div>
+  <div class="shadowCover">
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -11,10 +13,10 @@
         <span class="icon-bar"></span>
       </button>
       <% if (loggedIn) { %>
-          <li><a class="navbar-brand" href="#">Hello, <%= loggedIn.firstName %></a></li>
-     <% } else { %>
-          <a class="navbar-brand" href="/">Wayfinder</a>
-     <% } %>
+        <li><a class="navbar-brand" href="#">Hello, <%= loggedIn.firstName %></a></li>
+      <% } else { %>
+      <a class="navbar-brand" href="/">Wayfinder</a>
+      <% } %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,13 +25,13 @@
         <li><a href="/maps">Explore</a></li>
         <li><a href="/maps/create">Create</a></li>
 
-        <% if (loggedIn) { %>
+      <% if (loggedIn) { %>
           <li><a href="/narratives/usermaps">My Maps</a></li>
           <li><a href="/auth/logout">Log Out</a></li>
-        <% } else { %>
+      <% } else { %>
            <li><a href="/auth">Log In </a></li>
            <li><a href="/auth/newuser">New Account</a></li>
-        <% } %>
+      <% } %>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
@@ -53,26 +55,16 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<div id="googleMap3"></div>
-
- <script>
-    initialize3(
-      <%- map.latitude %>,
-      <%- map.longitude %>,
-      <%- JSON.stringify(map.locations) %> //array of markers
-    );
-
- </script>
-
-<div class="show-text">
-  <h1 class="show-header"> <%- map.mapName %> </h1>
- <p> <%- map.description %>  </p>
-</div>
-
+    <div id="highlights">
+        <h2>Search Results</h2>
+        <hr id="highlights-hr">
+        <% for (var i = 0; i < map.length; i++) { %>
+          <a class="inner-a white-text" href="/narratives/<%= map[i].id %>"><h4 class="white-text"> <%= map[i].mapName %></a>
+        <% } %>
+    </div>
+    </div>
+<% include ../partials/alerts.ejs %>
 
 </body>
-
-
 
 <% include ../partials/footer %>

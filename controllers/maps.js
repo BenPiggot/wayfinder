@@ -53,15 +53,6 @@ router.post("/", function(req, res) {
 });
 
 
-// router.post("/locations", function(req, res) {
-//   db.location.findOrCreate({where: {locationName: req.body.locationName,
-//     streetAddress: req.body.streetAddress, city: req.body.city, country: req.body.country,
-//     locationDescription: req.body.locationDescription}}).spread(function(map, created) {
-//       map.save().then(function() {
-//         res.redirect("/maps/locations")
-//     });
-//   });
-// });
 
 router.post("/locations/:id", function(req, res) {
   var id = req.params.id
@@ -76,7 +67,11 @@ router.post("/locations/:id", function(req, res) {
     });
   });
 
-
+// router.post('/delete/:id',function(req,res){
+//     db.map.destroy({where: {id: req.params.id}}).then(function(){
+//         res.redirect("/narratives/usermaps")
+//     });
+// })
 
 // router.post("/", function(req, res) {
 //   db.map.findOrCreate({where: {mapName: req.body.mapName, city: req.body.city,
