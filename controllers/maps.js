@@ -98,16 +98,6 @@ router.post("/locations/:id", function(req, res) {
     }
   });
 
-router.post('/delete/:id',function(req,res){
-    if (req.getUser()) {
-    db.map.destroy({where: {id: req.params.id}}).then(function(){
-        res.redirect("/narratives/usermaps")
-    });
-    }else{
-      req.flash('danger','You cannot delete this map.');
-      res.redirect('/');
-    }
-})
 
 router.post('/edit/:id', function(req, res) {
   db.map.find({ where: { id: req.params.id} }).then(function(map){
@@ -121,7 +111,6 @@ router.post('/edit/:id', function(req, res) {
   });
   });
 })
-
 
 
 

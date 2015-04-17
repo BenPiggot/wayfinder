@@ -46,16 +46,16 @@
 <h1 id="create-map-header"> <%- map.mapName %> </h1>
 <hr id="create-page-hr">
   <div id="container1">
-    <form id="map-action-buttons" action="/maps/locations/<%= localId %>" method="post">
+    <form id="map-action-buttons" class="location-form" action="/maps/locations/<%= localId %>" method="post">
       <div class="form-group">
         <h4>Location Name </h4>
-          <input id="front-page-input" class="label-weight" type="text" name="locationName" placeholder="Your Map Name">
+          <input class="front-page-input label-weight" type="text" name="locationName" placeholder="Location">
          <h4 class="create-page-input">Street Address</h4>
-        <input id="front-page-input" class="label-weight" type="text" name="streetAddress" placeholder="Street Address (Optional)">
+        <input class="front-page-input label-weight" type="text" name="streetAddress" placeholder="Street Address (Optional)">
         <h4 class="create-page-input">City </h4>
-        <input id="front-page-input" class="label-weight" type="text" name="city" placeholder="City Name">
+        <input class="front-page-input label-weight" type="text" name="city" placeholder="City Name">
         <h4 class="create-page-input">Country </h4>
-        <input id="front-page-input" class="label-weight" type="text" name="country" placeholder="Country">
+        <input class="front-page-input label-weight" type="text" name="country" placeholder="Country">
         <h4 class="create-page-input">Location Description</h4>
           <textarea type="text" id="create-text-area" class="label-weight" name="locationDescription" class="form-control"
             placeholder="Tell Us About This Place"></textarea>
@@ -64,15 +64,14 @@
       <input type="submit" class="add-buttons create-button white-text btn btn-info" value="Add a Location">
       <a href="/narratives/<%= localId %>" class="add-buttons create-button white-text btn btn-info">
           See Completed Map</a>
+      <a id="delete-form" href="/maps/edit/<%= localId %>" class="add-buttons create-button white-text btn btn-info">
+          Edit Map</a>
     </form>
 
-    <form id="delete-form" action="/maps/delete/<%= localId %>" method="post">
+<!--     <form id="delete-form" action="/maps/delete/<%= localId %>" method="post">
         <input type="submit" class="change-buttons create-button btn btn-danger white-text" value="Delete Map">
     </form>
-
-     <a id="delete-form" href="/maps/edit/<%= localId %>" class="change-buttons create-button btn btn-danger white-text" >
-          Edit Map</a>
-
+ -->
   </div>
 
   <div id="container2">

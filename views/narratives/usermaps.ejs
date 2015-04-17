@@ -50,8 +50,12 @@
         <h2>My Maps</h2>
         <hr id="highlights-hr">
         <% for (var i = map.dataValues.maps.length - 1; i >= 0; i--) { %>
-          <a class="inner-a white-text" href="/maps/locations/<%= map.dataValues.maps[i].id %>"><h4 class="white-text"> <%= map.dataValues.maps[i].mapName %></a>
+        <li class="user-list-item white-text">
+          <a class="inner-a white-text" href="/maps/locations/<%= map.dataValues.maps[i].id %>"> <%= map.dataValues.maps[i].mapName %></a>
+          <button class='btn-xs btn-danger delete-button' data='<%= map.dataValues.maps[i].id %>'>
+          <i class='white-text smaller-icon glyphicon glyphicon-trash'></i></a></button>
         <% } %>
+        </li>
     </div>
 
 </div>

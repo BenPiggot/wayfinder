@@ -85,18 +85,39 @@ function initialize3(lat,lng,markers) {
     }
   }
 
-
-   $('.delete-button').on('click', function(e) {
-      e.preventDefault();
-      var delBtn = $(this);
-      var myUrl = delBtn.attr('href');
-      console.log(myUrl)
-    $.ajax({
-        method: 'DELETE',
-        url: myUrl
-        }).done(function() {
-          delBtn.remove();
-        })
+$(function(){
+ $('button.btn-xs.btn-danger.delete-button').on('click', function(e) {
+    e.preventDefault();
+    var delBtn = $(this);
+    var myUrl = '/narratives/' + delBtn.attr('data');
+    console.log(myUrl)
+  if(confirm('Are you sure you want do delete this?')){
+  $.ajax({
+      method: 'DELETE',
+      url: myUrl
+      }).done(function() {
+        delBtn.parent('li').remove();
       })
+    }
+  })
+});
+
+
+
+//  $('.location-form').on('submit', function(e) {
+//     e.preventDefault();
+//     var locBtn = $(this);
+//     var myUrl = $(this).attr('action')
+//     var myData = $(this).serialize();
+//     console.log(myUrl)
+//     $.ajax({
+//     method:'POST',
+//     url:myUrl,
+//     data:myData
+//   }).done(function(data){
+//     location.href="/maps/locations/" + id;
+//   });
+// });
+
 
 
