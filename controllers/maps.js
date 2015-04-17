@@ -124,18 +124,6 @@ router.post('/edit/:id', function(req, res) {
 
 
 
-// router.post("/", function(req, res) {
-//   db.map.findOrCreate({where: {mapName: req.body.mapName, city: req.body.city,
-//     country: req.body.country, description: req.body.description}}).spread(function(map, created) {
-//       map.save().then(function(map) {
-//         db.tag.findOrCreate({where: {tagName: req.body.tagName}}).spread(function(tag, created) {
-//           map.addTag(tagName).then(function() {
-//           res.redirect("maps/locations")
-//         });
-//       });
-//     });
-//   });
-// });
 
 
 module.exports = router;

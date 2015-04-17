@@ -118,10 +118,25 @@ footer {
 
 /*NAVBAR STUFF*/
 
-.container .jumbotron,
-.container-fluid .jumbotron {
-  border-radius: 0px;
+body > div.shadowCover > nav{
+  border-radius: 0;
 }
+
+#create-page > nav {
+  border-radius: 0;
+}
+
+body > nav  {
+  border-radius: 0;
+}
+
+/*#bs-example-navbar-collapse-1 > ul > li > a{
+  color: white;
+}
+
+body > div.shadowCover > nav > div > div.navbar-header > a {
+  color: white;
+}*/
 
 /*FULL PAGE MAP */
 
@@ -456,5 +471,9 @@ footer {
 #about-hr {
   margin-bottom: 1em;
   margin-top: -0.3em;
+}
+
+#about-para {
+  font-weight: 100;
 }
 

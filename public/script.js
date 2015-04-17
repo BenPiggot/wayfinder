@@ -60,7 +60,7 @@ function initialize3(lat,lng,markers) {
     map2 = new google.maps.Map(document.getElementById("googleMap3"), mapProp2);
 
     var infowindow = new google.maps.InfoWindow({});
-
+    var markersObj = {};
     if (markers) {
     markers.forEach(function(item){
         console.log(item.locationName, item.locationDescription)
@@ -69,6 +69,7 @@ function initialize3(lat,lng,markers) {
           map: map2,
           icon: '/greypin.png'
         });
+        markersObj[item.id] = marker
         var name = item.locationName
         var description = item.locationDescription
         google.maps.event.addListener(marker, 'click', function() {
