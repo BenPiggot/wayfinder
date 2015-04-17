@@ -461,6 +461,8 @@ footer {
 
 .user-list-item {
   list-style-type: none;
+  margin-bottom: 0.3em;
+  font-weight: 100;
 }
 
 #highlights > li > button {
@@ -473,7 +475,7 @@ footer {
 #highlights > li > a {
   font-size: 1.2em;
   line-height: 0.8em;
-  font-weight: 200;
+  font-weight: 100;
 }
 /*ABOUT PAGE */
 
