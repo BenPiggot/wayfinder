@@ -525,12 +525,13 @@ footer {
       text-align: left;
     }
 
-    .front-page-buttons > button {
-      font-size: 1em;
-      margin-right: 0.3em;
-      margin-top: 0.3em;
-      font-weight: 100;
-    }
+  .front-page-buttons > button {
+    font-size: 1em;
+    margin-right: 0.3em;
+    margin-top: 0.3em;
+    font-weight: 100;
+  }
+
   .show-text {
      position: absolute;
      top: 70px;
@@ -646,6 +647,7 @@ footer {
     margin-bottom: 1em;
     }
 
+
    #about {
       margin: 0 15%;
       height: 50%;
@@ -664,3 +666,14 @@ footer {
     }
 
 }
+
+@media screen and (max-width: 400px) {
+   .create-button + .create-button + .create-button {
+    margin-top: -0.5em;
+    margin-bottom: 1em;
+    }
+
+
+
+}
+
