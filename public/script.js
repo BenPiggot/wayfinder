@@ -4,11 +4,13 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
-  $('.navbar-toggle.collapsed').on('click', function() {
-    $('.show-text').hide();
   $('.navbar-toggle').on('click', function() {
-    $('.show-text').show(500);
-  })
+    if($('.show-text').is(':visible')) {
+      $('.show-text').hide();
+    }
+    else {
+      $('.show-text').show(600);
+    }
   })
 })
 
