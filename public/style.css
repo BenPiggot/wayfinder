@@ -592,11 +592,11 @@ footer {
       font-size: 1em;
       margin-right: 0.3em;
       margin-top: 0.3em;
-      font-weight: 200;
+      font-weight: 300;
     }
     .caption-container {
       min-height: 100%;
-      font-weight: 200;
+      font-weight: 300;
       margin: 0 auto;
       width: 75%;
       z-index: 10;
