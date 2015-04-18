@@ -43,9 +43,24 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 <div class="container">
+
 <h1 id="create-map-header"> Edit your Map</h1>
 <hr id="create-page-hr">
+
+  <div id="container2">
+    <div id="googleMap3"></div>
+  </div>
+
+ <script>
+  initialize3(
+    <%- map.latitude %>,
+    <%- map.longitude %>,
+    <%- JSON.stringify(map.locations) %> //array of markers
+  );
+</script>
+
   <div id="container1">
   <% include ../partials/alerts.ejs %>
     <form action="/maps/edit/<%= localId %>" method="post">
@@ -58,22 +73,6 @@
       <input type="submit" id="create-button" class="add-buttons white-text btn btn-info" value="Make Changes">
   </form>
   </div>
-
-  <div id="container2">
-    <div id="googleMap3"></div>
-
-  </div>
-
-</div>
-
- <script>
-    initialize3(
-      <%- map.latitude %>,
-      <%- map.longitude %>,
-      <%- JSON.stringify(map.locations) %> //array of markers
-    );
-
-    </script>
 
 </body>
 

@@ -504,6 +504,7 @@ footer {
 
 
 /*MEDIA QUERIES*/
+
 @media screen and (max-width: 900px) {
   .carousel-inner img {
       display: block;
@@ -648,6 +649,5 @@ footer {
     #about-para {
       font-size: 14px;
     }
-
 
 }
