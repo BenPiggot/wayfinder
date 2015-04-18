@@ -25,9 +25,11 @@ router.get("/create", function(req, res) {
     }
   });
 
+
 router.get("/about", function(req, res) {
     res.render("maps/about")
     });
+
 
 router.get("/edit/:id", function(req, res) {
   if (req.getUser()) {
@@ -111,6 +113,7 @@ router.post('/edit/:id', function(req, res) {
   });
   });
 })
+
 
 router.delete('/:id',function(req,res){
     if (req.getUser()) {

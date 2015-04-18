@@ -126,7 +126,7 @@ body > div.shadowCover > nav{
   border-radius: 0;
 }
 
-body > nav  {
+body > nav.navbar {
   border-radius: 0;
 }
 
@@ -176,7 +176,6 @@ body > div.shadowCover > nav > div > div.navbar-header > a {
   padding: 1%;
   color: white;
   font-size: 1.2em;
-
 }
 
 #highlights-right {
@@ -251,7 +250,7 @@ h5 {
 }
 
 
-/*CREATE PAGE */
+/*CREATE AND SHOW PAGES */
 #create-page {
   background-color: #eee;
 }
@@ -281,8 +280,8 @@ h5 {
 
 .show-text {
    position: absolute;
-   top: 12%;
-   left: 5%;
+   top: 70px;
+   left: 40px;
    width: 25%;
    z-index: 49;
    background-color: white;
@@ -336,6 +335,7 @@ h5 {
   margin-top: 1.5em;
 }
 
+
 /*LOGIN PAGE*/
 .wrapper {
   margin-top: 80px;
@@ -388,6 +388,7 @@ input[type="password"] {
 #login-name {
   color: white;
 }
+
 
 /*SIGN-UP PAGE*/
 
@@ -501,3 +502,152 @@ footer {
   font-weight: 100;
 }
 
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 900px) {
+  .carousel-inner img {
+      display: block;
+      min-height:100%;
+      min-width: auto;
+  }
+
+  .caption-container {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    min-height: 100%;
+    width: 50%;
+    z-index: 10;
+  }
+
+  .front-page-buttons {
+      text-align: left;
+    }
+
+    .front-page-buttons > button {
+      font-size: 1em;
+      margin-right: 0.3em;
+      margin-top: 0.3em;
+      font-weight: 100;
+    }
+  .show-text {
+     position: absolute;
+     top: 70px;
+     left: 40px;
+     width: 30%;
+  }
+
+  #highlights {
+    float: left;
+    margin-top: 4em;
+    margin-left: 5%;
+    height: 50%;
+    width: 40%;
+    padding: 1%;
+    color: white;
+    font-size: 1em;
+  }
+
+  #container1 {
+    height: 500px;
+    width: 100%;
+    padding-bottom: 0;
+    margin-top: -1em;
+  }
+
+  #container2 {
+    height: 500px;
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .item {
+        height: 100%;
+        width: auto;
+    }
+    .carousel-inner img {
+      background-size: cover;
+    }
+
+    .front-page-buttons {
+      text-align: left;
+    }
+
+    .front-page-buttons > button {
+      font-size: 1em;
+      margin-right: 0.3em;
+      margin-top: 0.3em;
+      font-weight: 100;
+    }
+    .caption-container {
+      min-height: 100%;
+      margin: 0 auto;
+      width: 75%;
+      z-index: 10;
+    }
+    .show-text {
+       position: absolute;
+       top: 70px;
+       left: 30px;
+       width: 40%;
+    }
+
+    .show-text h1 {
+        font-size: 28px;
+    }
+
+    #create-map-header {
+      font-size: 36px;
+    }
+
+    #highlights {
+      margin: 0 15%;
+      height: 50%;
+      width: 70%;
+      padding: 1%;
+      color: white;
+      font-size: 1em;
+    }
+
+    #highlights h2 {
+      font-size: 28px;
+    }
+
+    #hightlights h4 {
+      font-size: 14px;
+    }
+
+    #container1 {
+      height: 500px;
+      width: 100%;
+      padding-bottom: 0;
+      margin-top: -1em;
+    }
+
+    #container2 {
+      height: 300px;
+      width: 100%;
+    }
+
+   #about {
+      margin: 0 15%;
+      height: 50%;
+      width: 70%;
+      padding: 1%;
+      color: white;
+      font-size: 1.2em;
+    }
+
+    #about h2 {
+      font-size: 28px;
+    }
+
+    #about-para {
+      font-size: 14px;
+    }
+
+
+}
