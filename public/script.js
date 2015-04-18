@@ -14,6 +14,7 @@ function initialize() {
   var mapProp = {
     center: new google.maps.LatLng(31.648498, -40),
     zoom: 2,
+    scrollwheel: false,
     panControl: false,
     zoomControl: true,
     scaleControl: false,
@@ -32,6 +33,7 @@ function initialize2(lat, lng) {
     var mapProp2 = {
     center: new google.maps.LatLng(lat, lng),
     zoom: 11,
+    scrollwheel: false,
     panControl: false,
     zoomControl: true,
     scaleControl: false,
@@ -49,6 +51,7 @@ function initialize3(lat,lng,markers) {
     var mapProp2 = {
     center: new google.maps.LatLng(lat, lng),
     zoom: 11,
+    scrollwheel: false,
     panControl: false,
     zoomControl: true,
     scaleControl: false,
@@ -70,13 +73,13 @@ function initialize3(lat,lng,markers) {
           icon: '/greypin.png'
         });
         markersObj[item.id] = marker
+        console.log(markersObj[item.id])
         var name = item.locationName
         var description = item.locationDescription
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.close();
           infowindow = new google.maps.InfoWindow({
               content: '<div id="pop-up">' + '<b>' + name + '</b>' + ":" + " " + description + '<br>'
-                      // + '<a href="http://www.nytimes.com"><i class="smaller-icon glyphicon glyphicon-pencil"></i></a>'
                       + '</div>'
           });
           infowindow.open(map2, marker);
@@ -101,23 +104,4 @@ $(function(){
     }
   })
 });
-
-
-
-//  $('.location-form').on('submit', function(e) {
-//     e.preventDefault();
-//     var locBtn = $(this);
-//     var myUrl = $(this).attr('action')
-//     var myData = $(this).serialize();
-//     console.log(myUrl)
-//     $.ajax({
-//     method:'POST',
-//     url:myUrl,
-//     data:myData
-//   }).done(function(data){
-//     location.href="/maps/locations/" + id;
-//   });
-// });
-
-
 

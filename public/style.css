@@ -470,8 +470,12 @@ footer {
   color: none;
 }
 .btn-xs.btn-danger.delete-button {
-  background-color: none;
 }
+
+#highlights > li > button.btn-xs.btn-info.change-button {
+  margin-right: 0.5em;
+}
+
 #highlights > li > a {
   font-size: 1.2em;
   line-height: 0.8em;

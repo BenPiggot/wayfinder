@@ -112,6 +112,18 @@ router.post('/edit/:id', function(req, res) {
   });
 })
 
+router.delete('/:id',function(req,res){
+    if (req.getUser()) {
+    db.map.destroy({where: {id: req.params.id}}).then(function(){
+        res.send({result: true})
+    });
+    }else{
+      req.flash('danger','You cannot delete this map.');
+      res.redirect('/');
+    }
+})
+
+
 
 
 

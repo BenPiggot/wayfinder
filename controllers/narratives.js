@@ -29,6 +29,7 @@ router.get("/usermaps", function(req, res) {
     where:{id:req.getUser().id},
     include:[db.map]
   }).then(function(map){
+    console.log(map.maps[0])
     res.render("narratives/usermaps", {map: map});
   })
 })
@@ -43,17 +44,6 @@ router.get("/:id", function(req, res) {
     res.render("narratives/journals", {map: map});
   });
 });
-
-router.delete('/:id',function(req,res){
-    if (req.getUser()) {
-    db.map.destroy({where: {id: req.params.id}}).then(function(){
-        res.send({result: true})
-    });
-    }else{
-      req.flash('danger','You cannot delete this map.');
-      res.redirect('/');
-    }
-})
 
 
 
