@@ -591,6 +591,10 @@ footer {
       text-align: left;
     }
 
+    .second-button {
+      margin-left: 0em;
+    }
+
     .front-page-buttons > button {
       font-size: 1em;
       margin-right: 0.3em;
@@ -666,6 +670,13 @@ footer {
   .create-button {
     margin-top: 0.5em;
     margin-bottom: 1em;
+    display: block;
+    width: 70%;
+    }
+
+  .create-button + .create-button + .create-button {
+    margin-top: 0.5em;
+    margin-bottom: 2em;
     display: block;
     width: 70%;
     }
