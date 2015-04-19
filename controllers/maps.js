@@ -68,12 +68,17 @@ var localId = parseInt(req.params.id);
 router.post("/", function(req, res) {
     var user = req.getUser();
     if(user){
+      if (req.body.mapName != "" && req.body.city != "") {
       db.map.findOrCreate({where: {mapName: req.body.mapName, city: req.body.city, country: req.body.country,
         description: req.body.description, userId: user.id}}).spread(function(map, created) {
           map.save().then(function() {
             res.redirect("maps/locations/" + map.id)
-        });
+        })
       });
+      } else {
+        req.flash('danger','Please enter a map name and a city name.')
+        res.redirect('/maps/create')
+      }
     } else{
       req.flash('danger','You must be logged in to create a map.');
       res.redirect('/');
@@ -84,16 +89,21 @@ router.post("/", function(req, res) {
 
 router.post("/locations/:id", function(req, res) {
   if (req.getUser()) {
-  var id = req.params.id
-    db.map.find({where: {id: id}}).then(function(map) {
-      map.createLocation({
-        locationName: req.body.locationName,
-        streetAddress: req.body.streetAddress, city: req.body.city, country: req.body.country,
-        locationDescription: req.body.locationDescription
-      }).then(function(location) {
-          res.redirect("/maps/locations/" + id)
-      });
-    });
+    if (req.body.locationName != "" && req.body.city != "") {
+      var id = req.params.id
+        db.map.find({where: {id: id}}).then(function(map) {
+          map.createLocation({
+            locationName: req.body.locationName,
+            streetAddress: req.body.streetAddress, city: req.body.city, country: req.body.country,
+            locationDescription: req.body.locationDescription
+          }).then(function(location) {
+              res.redirect("/maps/locations/" + id)
+          });
+        });
+      } else {
+        req.flash('danger','Please enter a location name and city.')
+        res.redirect('/maps/create')
+      }
    }else{
       req.flash('danger','You must be logged in to create a map.');
       res.redirect('/');
@@ -102,16 +112,21 @@ router.post("/locations/:id", function(req, res) {
 
 
 router.post('/edit/:id', function(req, res) {
-  db.map.find({ where: { id: req.params.id} }).then(function(map){
-    console.log(map.dataValues)
-    console.log(map.mapName)
-    console.log(req.body.mapName)
-      map.mapName = req.body.mapName
-      map.description = req.body.description
-      map.save().then(function() {
-    res.redirect("/maps/locations/" + req.params.id)
-  });
-  });
+  if (req.body.mapName != "" || req.body.description != "") {
+    db.map.find({ where: { id: req.params.id} }).then(function(map){
+      console.log(map.dataValues)
+      console.log(map.mapName)
+      console.log(req.body.mapName)
+        map.mapName = req.body.mapName
+        map.description = req.body.description
+        map.save().then(function() {
+      res.redirect("/maps/locations/" + req.params.id)
+      });
+    });
+  } else {
+        req.flash('danger','Enter a new map name or description.')
+        res.redirect('/maps/edit/' + req.params.id)
+    }
 })
 
 
