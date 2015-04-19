@@ -101,8 +101,8 @@ router.post("/locations/:id", function(req, res) {
           });
         });
       } else {
-        req.flash('danger','Please enter a location name and city.')
-        res.redirect("/maps/locations/" + id)
+        req.flash('danger','Please enter a location name and city.');
+        res.redirect("/maps/locations/" + req.params.id);
       }
    }else{
       req.flash('danger','You must be logged in to create a map.');
