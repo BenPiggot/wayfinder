@@ -431,6 +431,7 @@ footer {
     margin: 50px 0;
 }
 
+
 /*EDIT/DELETE*/
 .change-buttons {
   margin-top: 1em;
@@ -671,16 +672,20 @@ footer {
     margin-top: 0.5em;
     margin-bottom: 1em;
     display: block;
-    width: 70%;
+    width: 40%;
     }
 
   .create-button + .create-button + .create-button {
     margin-top: 0.5em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     display: block;
-    width: 70%;
+    width: 40%;
     }
 
+  #map-action-buttons {
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
 
    #about {
       margin: 0 15%;
@@ -698,7 +703,19 @@ footer {
     #about-para {
       font-size: 14px;
     }
+}
+
+@media screen and (max-width: 600px) {
+
+  .show-text {
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    width: 50%;
+  }
 
 }
+
+
 
 
