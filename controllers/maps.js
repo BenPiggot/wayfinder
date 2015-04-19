@@ -102,7 +102,7 @@ router.post("/locations/:id", function(req, res) {
         });
       } else {
         req.flash('danger','Please enter a location name and city.')
-        res.redirect('/maps/create')
+        res.redirect("/maps/locations/" + id)
       }
    }else{
       req.flash('danger','You must be logged in to create a map.');
