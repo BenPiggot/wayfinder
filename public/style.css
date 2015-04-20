@@ -302,6 +302,21 @@ h5 {
   margin-bottom: 0.2em;
 }
 
+#text-close {
+  margin-bottom: 0.5em;
+  font-size: 13px;
+  color: black;
+  opacity: 0.7;
+}
+
+#show-button {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  z-index: 49;
+}
+
 #create-page-hr {
   border-top: none;
   border-bottom: 1px solid #ccc;
@@ -581,6 +596,10 @@ footer {
     margin-right: 5%;
   }
 
+  #map-create-buttons {
+    margin-top: 2em;
+  }
+
   .create-button {
     margin-top: 0.5em;
     margin-bottom: 1em;
@@ -675,6 +694,10 @@ footer {
       margin-right: 5%;
     }
 
+    #map-create-buttons {
+      margin-top: 2em;
+    }
+
     .create-button {
       margin-top: 0.5em;
       margin-bottom: 1em;
@@ -710,6 +733,15 @@ footer {
 
     #about-para {
       font-size: 14px;
+    }
+
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      width: 280px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      margin-left: 0;
     }
 }
 

@@ -76,7 +76,7 @@ router.post("/", function(req, res) {
         })
       });
       } else {
-        req.flash('danger','Please enter a map name and a city name.')
+        req.flash('danger','Please enter a map name and a city.')
         res.redirect('/maps/create')
       }
     } else{
