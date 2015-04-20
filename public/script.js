@@ -5,8 +5,9 @@ $(document).ready(function() {
 
 $(document).ready(function(){
   $('.navbar-toggle').on('click', function() {
-    if($('.show-text').is(':visible')) {
+    if($('.show-text').is(':visible') || $('#show-button').is(':visible')) {
       $('.show-text').hide();
+      $('#show-button').hide();
     }
     else {
       $('.show-text').show(600);
