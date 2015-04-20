@@ -47,10 +47,22 @@ app.use("/narratives", narrativesCtrl);
 
 
 
-
 app.get("/", function(req, res) {
   res.render("front");
 })
+
+
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke! Please return to the site home page.');
+  next();
+});
+
+
+app.use(function(req, res, next) {
+  res.status(404).send('Sorry, this page does not exist. Please return to the previous page.');
+  next();
+});
 
 
 
