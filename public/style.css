@@ -147,7 +147,6 @@ body > div.shadowCover > nav > div > div.navbar-header > a {
     min-height: 100%;
     z-index: 0;
     margin-bottom: -40px;
-    margin-top: -20px;
 }
 
 #googleMap2 {
@@ -170,6 +169,10 @@ body > div.shadowCover > nav > div > div.navbar-header > a {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.62);
+}
+
+#container2 > #googleMap{
+  margin-top: -20px;
 }
 
 #highlights {
