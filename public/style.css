@@ -147,12 +147,14 @@ body > div.shadowCover > nav > div > div.navbar-header > a {
     min-height: 100%;
     z-index: 0;
     margin-bottom: -40px;
+    margin-top: -20px;
 }
 
 #googleMap2 {
     min-height: 100%;
     z-index: 0;
     margin-bottom: -40px;
+    margin-top: -20px;
 }
 
 #googleMap3 {
@@ -637,10 +639,6 @@ footer {
     margin-right: 5%;
   }
 
-  #map-create-buttons {
-    margin-top: 2em;
-  }
-
   .create-button {
     margin-top: 0.5em;
     margin-bottom: 1em;
@@ -745,7 +743,7 @@ footer {
     #container2 {
       height: 300px;
       width: 90%;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       margin-left: 5%;
       margin-right: 5%;
     }
@@ -769,7 +767,6 @@ footer {
       }
 
    #map-action-buttons {
-      margin-top: 1em;
       padding-bottom: 2em;
       margin-bottom: 2em;
     }
