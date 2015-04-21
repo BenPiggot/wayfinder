@@ -542,6 +542,33 @@ footer {
 }
 
 
+/*404 AND 500 ERRORS*/
+.error {
+  background-color: #ddd;
+  height: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.error-header {
+  text-align: center;
+  margin-top: 10%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.error-subhead {
+  text-align: center;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.error-hr {
+  margin-left: 20%;
+  margin-right: 20%;
+  border-top: none;
+  border-bottom: 1px solid #bbb;
+}
 
 
 /*MEDIA QUERIES*/
@@ -617,6 +644,20 @@ footer {
     margin-top: 0.5em;
     margin-bottom: 1em;
   }
+
+  .error-header {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 10%;
+  }
+
+  .error-subhead {
+    text-align: center;
+    font-size: 24px;
+  }
+
+
+
 
 }
 
@@ -751,7 +792,6 @@ footer {
       font-weight: 200;
     }
 
-
     .alert {
       padding: 15px;
       margin-bottom: 20px;
@@ -768,6 +808,22 @@ footer {
       border-radius: 4px;
       margin-left: 0px;
     }
+
+  .error-header {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 25%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  .error-subhead {
+    text-align: center;
+    font-size: 16px;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
 }
 
 @media screen and (max-width: 400px) {

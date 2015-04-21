@@ -54,13 +54,14 @@ app.get("/", function(req, res) {
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);
-  res.status(500).send('Something broke! Please return to the site home page.');
+  res.status(500).render('crash');
   next();
 });
 
+// Something broke! Please return to the site home page
 
 app.use(function(req, res, next) {
-  res.status(404).send('Sorry, this page does not exist. Please return to the previous page.');
+  res.status(404).render('error');
   next();
 });
 
