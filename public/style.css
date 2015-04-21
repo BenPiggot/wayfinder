@@ -172,7 +172,7 @@ body > div.shadowCover > nav > div > div.navbar-header > a {
 
 #highlights {
   float: left;
-  margin-top: 4em;
+  margin-top: 3em;
   margin-left: 5%;
   height: 400px;
   width: 25%;
@@ -610,9 +610,9 @@ footer {
 
   #highlights {
     float: left;
-    margin-top: 4em;
+    margin-top: 3em;
     margin-left: 5%;
-    height: 50%;
+    height: 400px;
     width: 40%;
     padding: 1%;
     color: white;
@@ -716,7 +716,7 @@ footer {
 
     #highlights {
       margin: 0 15%;
-      height: 50%;
+      height: 400px;
       width: 70%;
       padding: 1%;
       color: white;
