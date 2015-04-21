@@ -46,7 +46,6 @@ app.use("/auth", authCtrl);
 app.use("/narratives", narrativesCtrl);
 
 
-
 app.get("/", function(req, res) {
   res.render("front");
 })
@@ -58,13 +57,11 @@ app.use(function(err, req, res, next) {
   next();
 });
 
-// Something broke! Please return to the site home page
 
 app.use(function(req, res, next) {
   res.status(404).render('error');
   next();
 });
-
 
 
 app.listen(process.env.PORT || 3000, function() {
