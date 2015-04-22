@@ -1,8 +1,11 @@
+// Stops carousel from moving when mouse is outside
 $(document).ready(function() {
    $('.carousel').carousel('pause');
 
 });
 
+
+// Toggles text box on map show pages on/off depending on state of navbar dropdown menu.
 $(document).ready(function(){
   $('.navbar-toggle').on('click', function() {
     if($('.show-text').is(':visible') || $('#show-button').is(':visible')) {
@@ -15,6 +18,8 @@ $(document).ready(function(){
   })
 })
 
+
+// Functions show/hide text box on user show pages.
 $(document).ready(function() {
   $('#text-close').on('click', function() {
     $('.show-text').hide();
@@ -35,6 +40,7 @@ var map
 var map2
 
 
+// Google Maps initialize function for background display, initial create page
 function initialize() {
   var mapProp = {
     center: new google.maps.LatLng(31.648498, -40),
@@ -55,6 +61,7 @@ function initialize() {
 
 
 
+// Google Maps initialize function for location adding, map editing pages
 function initialize2(lat,lng,markers) {
 
     var mapProp2 = {
@@ -97,6 +104,9 @@ function initialize2(lat,lng,markers) {
     }
   }
 
+
+
+// AJAX function allowing users to remove their own maps.
 $(function(){
  $('button.btn-xs.btn-danger.delete-button').on('click', function(e) {
     e.preventDefault();

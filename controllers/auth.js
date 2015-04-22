@@ -15,6 +15,7 @@ router.get("/newuser", function(req, res) {
 });
 
 
+// New user creation, with validation checks
 router.post("/newuser", function(req, res) {
   db.user.findOrCreate({where: {firstName: req.body.firstName, lastName: req.body.lastName,
     password: req.body.password, email: req.body.email}}).spread(function(user, created) {
@@ -29,6 +30,8 @@ router.post("/newuser", function(req, res) {
   })
 });
 
+
+// User login
 router.post('/',function(req,res){
     db.user.find({where:{email:req.body.email}})
     .then(function(user){
@@ -65,6 +68,8 @@ router.post('/',function(req,res){
 
 });
 
+
+// User log Out
 router.get('/logout',function(req,res){
    delete req.session.user;
    console.log('logged out')

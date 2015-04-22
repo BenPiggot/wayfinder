@@ -7,15 +7,16 @@ var request = require('request');
 var db = require('../models')
 
 
+// Render site explore/homepage
 router.get("/", function(req, res) {
     db.map.findAll().then(function(map) {
     var locals = {mapList: map}
-    // console.log(locals.mapList[1])
       res.render("maps/explore", locals);
     })
 });
 
 
+// Render map creation page, only open to logged in users
 router.get("/create", function(req, res) {
   if (req.getUser()) {
     res.render("maps/create")
@@ -26,11 +27,13 @@ router.get("/create", function(req, res) {
   });
 
 
+// Render about page
 router.get("/about", function(req, res) {
     res.render("maps/about")
     });
 
 
+// Render edit page, only available to logged in users
 router.get("/edit/:id", function(req, res) {
   if (req.getUser()) {
     var localId = parseInt(req.params.id);
@@ -48,6 +51,7 @@ router.get("/edit/:id", function(req, res) {
   });
 
 
+// Get add locations page, accessible from create map page
 router.get("/locations/:id", function(req, res) {
 if (req.getUser()) {
 var localId = parseInt(req.params.id);
@@ -65,6 +69,7 @@ var localId = parseInt(req.params.id);
 });
 
 
+// Create a new map, only accessible to logged in users
 router.post("/", function(req, res) {
     var user = req.getUser();
     if(user){
@@ -86,7 +91,7 @@ router.post("/", function(req, res) {
 });
 
 
-
+// Add locations to user map
 router.post("/locations/:id", function(req, res) {
   if (req.getUser()) {
     if (req.body.locationName != "" && req.body.city != "") {
@@ -111,6 +116,7 @@ router.post("/locations/:id", function(req, res) {
   });
 
 
+// Edit user maps,  only available to logged in users
 router.post('/edit/:id', function(req, res) {
   if (req.body.mapName != "" || req.body.description != "") {
     db.map.find({ where: { id: req.params.id} }).then(function(map){
@@ -130,6 +136,8 @@ router.post('/edit/:id', function(req, res) {
 })
 
 
+
+// Delete maps, only available to logged in users, uses AJAX
 router.delete('/:id',function(req,res){
     if (req.getUser()) {
     db.map.destroy({where: {id: req.params.id}}).then(function(){

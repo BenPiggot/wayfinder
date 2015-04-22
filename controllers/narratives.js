@@ -7,8 +7,8 @@ var request = require('request');
 var db = require('../models');
 
 
+// Functionality for user searches in navbar search form
 router.get("/search", function(req, res) {
-  console.log("Awesome")
   var query = '%'+req.query.q+'%'
   db.map.findAll({
     where:{
@@ -24,6 +24,7 @@ router.get("/search", function(req, res) {
 })
 
 
+// Renders individual user map list pages
 router.get("/usermaps", function(req, res) {
    db.user.find({
     where:{id:req.getUser().id},
@@ -34,6 +35,8 @@ router.get("/usermaps", function(req, res) {
   })
 })
 
+
+// Renders show pages for individual user maps, available to all
 router.get("/:id", function(req, res) {
   var localId = parseInt(req.params.id);
   db.map.find({
@@ -46,10 +49,5 @@ router.get("/:id", function(req, res) {
 });
 
 
-
-
-
-
-// "narratives/journals"
 
 module.exports = router;

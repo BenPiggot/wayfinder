@@ -4,6 +4,7 @@
   <div class="shadowCover">
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
+
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -12,11 +13,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
+      <!-- Control flow to check if user is logged in and render page accordingly -->
       <% if (loggedIn) { %>
         <li><a class="navbar-brand" href="#">Hello, <%= loggedIn.firstName %></a></li>
       <% } else { %>
       <a class="navbar-brand" href="/">Wayfinder</a>
       <% } %>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
