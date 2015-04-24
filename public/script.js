@@ -111,7 +111,7 @@ $(function(){
  $('button.btn-xs.btn-danger.delete-button').on('click', function(e) {
     e.preventDefault();
     var delBtn = $(this);
-    var myUrl = '/narratives/' + delBtn.attr('data');
+    var myUrl = '/maps/' + delBtn.attr('data');
     console.log(myUrl)
   if(confirm('Are you sure you want do delete this?')){
   $.ajax({
