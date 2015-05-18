@@ -20,7 +20,7 @@ router.post("/newuser", function(req, res) {
   db.user.findOrCreate({where: {firstName: req.body.firstName, lastName: req.body.lastName,
     password: req.body.password, email: req.body.email}}).spread(function(user, created) {
       user.save().then(function() {
-          req.flash('success','Account succesfully created! Log In!')
+          req.flash('success','Account succesfully created!')
           res.redirect('/');
     })
   }).catch(function(error){
@@ -62,7 +62,7 @@ router.post('/',function(req,res){
         }
         else{
             console.log('no user');
-            req.flash('danger','Unknown user. Please sign up.');
+            req.flash('danger','Unknown user.');
             res.redirect('/');
         }
     })
