@@ -126,12 +126,13 @@ router.post('/edit/:id', function(req, res) {
         map.mapName = req.body.mapName
         map.description = req.body.description
         map.save().then(function() {
+      req.flash('success', 'Changes successfully saved.')
       res.redirect("/maps/locations/" + req.params.id)
       });
     });
   } else {
-        req.flash('danger','Enter a new map name or description.')
-        res.redirect('/maps/edit/' + req.params.id)
+        req.flash('danger','No edits were made.')
+        res.redirect('/maps/locations/' + req.params.id)
     }
 })
 
