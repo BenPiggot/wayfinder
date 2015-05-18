@@ -128,3 +128,20 @@ $(function(){
   })
 });
 
+// // AJAX function allowing users to remove their own maps.
+// $(function(){
+//  $('.btn.btn-lg.btn-info.btn-block').on('click', function(e) {
+//     e.preventDefault();
+//     var loginBtn = $(this);
+//     var myUrl = "/auth";
+//     console.log(myUrl)
+//   $.ajax({
+//       method: 'POST',
+//       url: myUrl
+//       }).done(function() {
+//        res.render("awesome")
+//       })
+//     })
+// });
+
+

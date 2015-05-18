@@ -547,6 +547,14 @@ footer {
   border-radius: 4px;
 }
 
+.front-alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  z-index: 100;
+}
+
 
 /*404 AND 500 ERRORS*/
 .error {
@@ -806,6 +814,15 @@ footer {
       border-radius: 4px;
       margin-left: 0px;
     }
+
+.front-alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  z-index: 100;
+}
+
 
   .error-header {
     text-align: center;

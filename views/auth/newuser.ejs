@@ -1,13 +1,13 @@
 
 
 <% include ../partials/alerts.ejs %>
-<form class="form-horizontal" action="" method="POST">
    <div class="modal-header">
    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h2 class="modal-title" id="myModalLabel">Register</h2>
 
     </div>
     <div class="modal-body">
+    <form class="form-horizontal" action="/auth/newuser" method="POST">
     <div class="control-group">
       <!-- Username -->
       <label class="fieldset-margin control-label label-weight"  for="firstName">First Name</label>
