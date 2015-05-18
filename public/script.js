@@ -1,9 +1,13 @@
 // Stops carousel from moving when mouse is outside
 $(document).ready(function() {
    $('.carousel').carousel('pause');
-
 });
 
+$(document).ready(function() {
+  $('#myModal').on('hidden.bs.modal', function(){
+    $(this).removeData('bs.modal');
+  });
+});
 
 // Toggles text box on map show pages on/off depending on state of navbar dropdown menu.
 $(document).ready(function(){
@@ -123,4 +127,6 @@ $(function(){
     }
   })
 });
+
+
 

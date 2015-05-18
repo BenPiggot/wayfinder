@@ -2,7 +2,6 @@
 <body>
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -10,75 +9,101 @@
   </ol>
 
   <div class="carousel-inner">
-    <div class="item active">
-      <img src="http://images.trvl-media.com/media/content/shared/images/travelguides/destination/179992/Barcelona-52305.jpg" alt="..." class="fill">
-            <div class="caption-container">
+      <div class="item active">
+
+
+        <img src="http://images.trvl-media.com/media/content/shared/images/travelguides/destination/179992/Barcelona-52305.jpg" alt="..." class="fill">
+          <div class="caption-container">
+
               <h1 class="white-text">Welcome to Wayfinder</h1>
               <p class="white-text">
                 Wayfinder is a web application that allows you to use maps to tell your stories about living in and visiting
                 places around the world. Click on the Explore Inside button below to view other's stories. Register for an account and start
                 building your own stories today!
-                 <div class="front-page-buttons">
-                  <button class="btn btn-md btn-info"><a class="front-a white-text" href="/auth">
+              </p>
+               <div class="front-page-buttons">
+                <button class="btn btn-md btn-info"><a class="front-a white-text" href="/auth"
+                data-toggle="modal" data-target="#loginModal">
+                  Log In</a></button>
+                <button class="btn btn-md btn-info second-button">
+                <a class="front-a white-text" href="/auth/newuser" data-toggle="modal" data-target="#signupModal">Sign Up</a></button>
+                <button class="btn btn-md btn-info">
+                <a class="front-a white-text" href="/maps">Explore Inside</a></button>
+              </div>
+            <% include ./partials/alertsFront.ejs %>
+          </div>
+      </div>
+      <div class="item">
+        <img src="http://i0.wp.com/thisbigcity.net/wp-content/uploads/2014/09/7883535488_a85dbff866_b.jpg?w=900" alt="..." class="fill">
+              <div class="caption-container">
+                <h1 class="white-text">Learn from Others</h1>
+                <p class="white-text">
+                  Looking for travel advice for a trip to Europe? Looking for good places to take young children nearby?
+                  Relocating to a new city because of work? Wayfinder is a site designed to allow you to find out from others who
+                  have lived in, travlled to, or experienced the same things as you.
+                </p>
+                <div class="front-page-buttons">
+                  <button class="btn btn-md btn-info"><a class="front-a white-text" href="/auth"
+                  data-toggle="modal" data-target="#loginModal">
                     Log In</a></button>
                   <button class="btn btn-md btn-info second-button">
-                  <a class="front-a white-text" href="/auth/newuser">Sign Up</a></button>
+                  <a class="front-a white-text" href="/auth/newuser" data-toggle="modal" data-target="#signupModal">Sign Up</a></button>
                   <button class="btn btn-md btn-info">
                   <a class="front-a white-text" href="/maps">Explore Inside</a></button>
                 </div>
-            </div>
-    </div>
-    <div class="item">
-      <img src="http://i0.wp.com/thisbigcity.net/wp-content/uploads/2014/09/7883535488_a85dbff866_b.jpg?w=900" alt="..." class="fill">
-            <div class="caption-container">
-              <h1 class="white-text">Learn from Others</h1>
-              <p class="white-text">
-                Looking for travel advice for a trip to Europe? Looking for good places to take young children nearby?
-                Relocating to a new city because of work? Wayfinder is a site designed to allow you to find out from others who
-                have lived in, travlled to, or experienced the same things as you.
-              </p>
+                <% include ./partials/alertsFront.ejs %>
+              </div>
+
+      </div>
+      <div class="item">
+        <img src="http://images.fineartamerica.com/images-medium-large/colors-of-istanbul-street-life-kantilal-patel.jpg" alt="..." class="fill">
+          <div class="caption-container">
+                <h1 class="white-text">Tell your Story</h1>
+                <p class="white-text">
+                  Wayfinder is not just a travel site. It is designed for you to tell <em>your</em> experience, wherever and
+                  whatever that may be. No story is small or unimportant to map. Click on the sign-up button below and get started
+                  today!
+                  </p>
                 <div class="front-page-buttons">
-                  <button class="btn btn-info"><a class="front-a white-text" href="/auth">
+                  <button class="btn btn-md btn-info"><a class="front-a white-text" href="/auth"
+                  data-toggle="modal" data-target="#loginModal">
                     Log In</a></button>
-                  <button class="btn btn-info second-button">
-                  <a class="front-a white-text" href="/auth/newuser">Sign Up</a></button>
-                  <button class="btn btn-info">
+                  <button class="btn btn-md btn-info second-button">
+                  <a class="front-a white-text" href="/auth/newuser" data-toggle="modal" data-target="#signupModal">Sign Up</a></button>
+                  <button class="btn btn-md btn-info">
                   <a class="front-a white-text" href="/maps">Explore Inside</a></button>
                 </div>
+            <% include ./partials/alertsFront.ejs %>
             </div>
+        </div>
     </div>
-    <div class="item">
-      <img src="http://images.fineartamerica.com/images-medium-large/colors-of-istanbul-street-life-kantilal-patel.jpg" alt="..." class="fill">
-            <div class="caption-container">
-              <h1 class="white-text">Tell your Story</h1>
-              <p class="white-text">
-                Wayfinder is not just a travel site. It is designed for you to tell <em>your</em> experience, wherever and
-                whatever that may be. No story is small or unimportant to map. Click on the sign-up button below and get started
-                today!
-                </p>
-                <div class="front-page-buttons">
-                  <button class="btn btn-info"><a class="front-a white-text" href="/auth">
-                    Log In</a></button>
-                  <button class="btn btn-info second-button">
-                  <a class="front-a white-text" href="/auth/newuser">Sign Up</a></button>
-                  <button class="btn btn-info">
-                  <a class="front-a white-text" href="/maps">Explore Inside</a></button>
-                </div>
-            </div>
-    </div>
+
+
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
   </div>
 
 
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+    </div>
+  </div>
 </div>
 
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-
+    </div>
+  </div>
+</div>
 
 
 

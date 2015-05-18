@@ -1,61 +1,43 @@
-<% include ../partials/header %>
-<body>
-<div id="greyish" class="container container-margin">
 <% include ../partials/alerts.ejs %>
-<form class="form-horizontal" action="" method="POST">
-  <fieldset>
-    <div id="legend">
-      <legend class="legend-header">Register</legend>
-    </div>
-    <div class="control-group">
-      <!-- Username -->
-      <label class="fieldset-margin control-label label-weight"  for="firstName">First Name</label>
-      <div class="controls">
-        <input type="text" id="firstName" name="firstName" placeholder="" class="input-xlarge">
-      </div>
-    </div>
-
-    <div class="control-group">
-      <!-- Password-->
-      <label class="control-label label-weight" for="lastName">Last Name</label>
-      <div class="controls">
-        <input type="text" id="lastName" name="lastName" placeholder="" class="input-xlarge">
-      </div>
-    </div>
-
-    <div class="control-group">
-      <!-- E-mail -->
-      <label class="control-label label-weight" for="email">E-mail</label>
-      <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-      </div>
-    </div>
-
-    <div class="control-group">
-      <!-- Password-->
-      <label class="control-label label-weight" for="password">Password</label>
-      <div class="controls">
-        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-      </div>
-    </div>
 
 
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button id="sign-up-button" class="btn btn-success label-weight">Register</button>
-      </div>
+<div class="modal-content">
+<form action="/auth/newuser" method="POST">
+<div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h2 class="modal-title" id="myModalLabel">Join Wayfinder</h2>
     </div>
-  </fieldset>
-</form>
+<div class="modal-body">
 
+  <div class="form-group has-feedback">
+      <label class="sr-only control-label required" for="firstName">First name</label>
+      <input placeholder="First name" class="form-control" type="text" id="firstName" name="firstName">
+      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+  </div>
+
+  <div class="form-group has-feedback">
+      <label class="sr-only control-label required" for="lastName">Last name</label>
+      <input placeholder="Last name" class="form-control" type="text" id="lastName" name="lastName">
+      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+  </div>
+
+  <div class="form-group has-feedback">
+      <label class="sr-only control-label required" for="email">Email</label>
+      <input placeholder="Email" class="form-control" type="text" id="email" name="email">
+      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+  </div>
+
+  <div class="form-group has-feedback">
+      <label class="sr-only control-label required" for="password">Password</label>
+      <input placeholder="Password" class="form-control" type="password" id="password" name="password">
+      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+  </div>
 
 </div>
-</body>
 
+<div class="modal-footer">
+    <button id="sign-up-button"class="btn btn-default" data-dismiss="modal">Close</button>
+   <button id="sign-up-button" class="btn btn-info label-weight">Register</button>
+</div>
+</form></div>
 
-
-
-
-
-<% include ../partials/footer %>

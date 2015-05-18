@@ -362,6 +362,15 @@ h5 {
 
 
 /*LOGIN PAGE*/
+
+#login-submit {
+  font-weight: 200;
+}
+
+.input.form-control {
+  font-weight: 100;
+}
+
 .wrapper {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -403,12 +412,13 @@ input[type="password"] {
   border-top-right-radius: 0;
 }
 
-.alert-box {
+.alert-box.front-alert {
   width: 300px;
   height: 50px;
   text-align: center;
-  margin: 1% auto;
+  margin: 5% 0;
 }
+
 
 #login-name {
   color: white;
@@ -417,21 +427,27 @@ input[type="password"] {
 
 /*SIGN-UP PAGE*/
 
+#sign-up-button {
+  margin-top: 0em;
+  text-align: center;
+}
+
 #greyish {
   background-color: #eee;
 }
 
+.input-space {
+  width: 100%;
+  border-radius: 2px;
+}
 .fieldset-margin {
   margin-top: -0.5em;
 }
 
-#sign-up-button {
-  margin-top: 0.7em;
-}
 
 .legend-header {
   font-size: 32px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .container-margin {
@@ -441,7 +457,7 @@ input[type="password"] {
 }
 
 .label-weight {
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .normal-input {
@@ -545,6 +561,15 @@ footer {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+
+.front-alert {
+  padding: 15px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  z-index: 100;
 }
 
 
@@ -798,6 +823,7 @@ footer {
       border-radius: 4px;
     }
 
+
     .left-alert {
       padding: 15px;
       margin-bottom: 20px;
@@ -807,20 +833,29 @@ footer {
       margin-left: 0px;
     }
 
-  .error-header {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 25%;
-    margin-left: 8%;
-    margin-right: 8%;
-  }
+    .front-alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      z-index: 100;
+    }
 
-  .error-subhead {
-    text-align: center;
-    font-size: 16px;
-    margin-left: 8%;
-    margin-right: 8%;
-  }
+
+    .error-header {
+      text-align: center;
+      font-size: 30px;
+      margin-top: 25%;
+      margin-left: 8%;
+      margin-right: 8%;
+    }
+
+    .error-subhead {
+      text-align: center;
+      font-size: 16px;
+      margin-left: 8%;
+      margin-right: 8%;
+    }
 
 }
 
