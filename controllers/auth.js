@@ -25,7 +25,7 @@ router.post("/newuser", function(req, res) {
   }).catch(function(error){
     if (error) {
         req.flash('danger','Please enter a valid email and password.')
-        res.redirect('/auth/newuser')
+        res.redirect('/')
     }
   })
 });
@@ -55,14 +55,14 @@ router.post('/',function(req,res){
                 else{
                     console.log('wrong password');
                     req.flash('danger','Invalid password.');
-                    res.redirect('/auth');
+                    res.redirect('/');
                 }
             })
         }
         else{
             console.log('no user');
             req.flash('danger','Unknown user. Please sign up.');
-            res.redirect('/auth/newuser2');
+            res.redirect('/');
         }
     })
 
@@ -72,7 +72,6 @@ router.post('/',function(req,res){
 // User log Out
 router.get('/logout',function(req,res){
    delete req.session.user;
-   console.log('logged out')
    res.redirect('/')
 });
 

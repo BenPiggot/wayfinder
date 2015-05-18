@@ -1,53 +1,42 @@
-
-
 <% include ../partials/alerts.ejs %>
-   <div class="modal-header">
+
+
+<div class="modal-content">
+<form role="form" action="/auth/newusers" accept-charset="UTF-8" method="post">
+<div class="modal-header">
    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h2 class="modal-title" id="myModalLabel">Register</h2>
-
+      <h2 class="modal-title" id="myModalLabel">Join Wayfinder</h2>
     </div>
-    <div class="modal-body">
-    <form class="form-horizontal" action="/auth/newuser" method="POST">
-    <div class="control-group">
-      <!-- Username -->
-      <label class="fieldset-margin control-label label-weight"  for="firstName">First Name</label>
-      <div class="controls">
-        <input type="text" id="firstName" name="firstName" placeholder="" class="input-xlarge">
-      </div>
-    </div>
+<div class="modal-body">
 
-    <div class="control-group">
-      <!-- Password-->
-      <label class="control-label label-weight" for="lastName">Last Name</label>
-      <div class="controls">
-        <input type="text" id="lastName" name="lastName" placeholder="" class="input-xlarge">
-      </div>
-    </div>
+  <div class="form-group has-feedback">
+      <label class="sr-only control-label required" for="firstName">First name</label>
+      <input placeholder="First name" class="form-control" type="text" id="firstName" name="firstName">
+      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+  </div>
 
-    <div class="control-group">
-      <!-- E-mail -->
-      <label class="control-label label-weight" for="email">E-mail</label>
-      <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-      </div>
-    </div>
+  <div class="form-group has-feedback">
+      <label class="sr-only control-label required" for="lastName">Last name</label>
+      <input placeholder="Last name" class="form-control" type="text" id="lastName" name="lastName">
+      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+  </div>
 
-    <div class="control-group">
-      <!-- Password-->
-      <label class="control-label label-weight" for="password">Password</label>
-      <div class="controls">
-        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-      </div>
-    </div>
+  <div class="form-group has-feedback">
+      <label class="sr-only control-label required" for="email">Email</label>
+      <input placeholder="Email" class="form-control" type="text" id="email" name="email">
+      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+  </div>
 
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button id="sign-up-button" class="btn btn-info label-weight">Register</button>
-      </div>
-    </div>
-</form>
+  <div class="form-group has-feedback">
+      <label class="sr-only control-label required" for="password">Password</label>
+      <input placeholder="Password" class="form-control" type="password" id="password" name="password">
+      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+  </div>
 
+</div>
 
-
+<div class="modal-footer">
+   <button id="sign-up-button" class="btn btn-info label-weight">Register</button>
+</div>
+</form></div>
 
