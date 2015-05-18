@@ -1,19 +1,17 @@
 <% include ../partials/header %>
-<div class="container">
-  <div class="wrapper">
+
   <% include ../partials/alerts.ejs %>
-    <form class="form-signin" method="post" action="/auth">
-      <h2 class="form-signin-heading">Please login</h2>
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h2 class="modal-title" id="myModalLabel">Please Login</h2>
+  </div>
+  <div class="modal-body">
+    <form method="post" action="/auth">
       <input type="text" class="form-control" name="email" placeholder="Email Address" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-
-      <button class="btn btn-lg btn-info btn-block" type="submit">Login</button>
+      <button class="btn btn-lg btn-info btn-block" type="submit">Log In</button>
     </form>
   </div>
-
-
-</div>
-
 
 
 
