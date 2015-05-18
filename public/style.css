@@ -362,6 +362,15 @@ h5 {
 
 
 /*LOGIN PAGE*/
+
+#login-submit {
+  font-weight: 200;
+}
+
+.input.form-control {
+  font-weight: 100;
+}
+
 .wrapper {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -407,7 +416,7 @@ input[type="password"] {
   width: 300px;
   height: 50px;
   text-align: center;
-  margin: 1% 0;
+  margin: 5% 0;
 }
 
 
@@ -417,6 +426,11 @@ input[type="password"] {
 
 
 /*SIGN-UP PAGE*/
+
+#sign-up-button {
+  margin-top: 0em;
+  text-align: center;
+}
 
 #greyish {
   background-color: #eee;
@@ -430,9 +444,6 @@ input[type="password"] {
   margin-top: -0.5em;
 }
 
-#sign-up-button {
-  margin-top: 0.7em;
-}
 
 .legend-header {
   font-size: 32px;
@@ -554,6 +565,7 @@ footer {
 
 .front-alert {
   padding: 15px;
+  margin-top: 80px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;

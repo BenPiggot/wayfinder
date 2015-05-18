@@ -20,7 +20,8 @@ router.post("/newuser", function(req, res) {
   db.user.findOrCreate({where: {firstName: req.body.firstName, lastName: req.body.lastName,
     password: req.body.password, email: req.body.email}}).spread(function(user, created) {
       user.save().then(function() {
-          res.redirect('/auth');
+          req.flash('success','Account succesfully created! Log In!')
+          res.redirect('/');
     })
   }).catch(function(error){
     if (error) {
@@ -72,6 +73,7 @@ router.post('/',function(req,res){
 // User log Out
 router.get('/logout',function(req,res){
    delete req.session.user;
+   req.flash('info','You are now logged out.');
    res.redirect('/')
 });
 
