@@ -1,4 +1,4 @@
-# wayfinder
+# Wayfinder
 
 ### About
 Wayfinder is a web application that enables users to use maps to tell their stories about living in and visiting
