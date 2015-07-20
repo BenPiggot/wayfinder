@@ -66,6 +66,7 @@ html,body{
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    background-attachment: fixed;
 }
 
 .carousel-control {
@@ -133,13 +134,6 @@ body > nav.navbar {
   border-radius: 0;
 }
 
-/*#bs-example-navbar-collapse-1 > ul > li > a{
-  color: white;
-}
-
-body > div.shadowCover > nav > div > div.navbar-header > a {
-  color: white;
-}*/
 
 /*FULL PAGE MAP */
 
@@ -498,11 +492,10 @@ footer {
 
 /*INFO WINDOWS */
 #pop-up {
-
-    border-radius: 3px;
-    padding: 0.2em;
-    font-size: 1.1em;
-    max-width: 350px;
+  border-radius: 3px;
+  padding: 0.2em;
+  font-size: 1.1em;
+  max-width: 350px;
 }
 
 .smaller-icon {
@@ -520,8 +513,6 @@ footer {
 #highlights > li > button {
   float: right;
   color: none;
-}
-.btn-xs.btn-danger.delete-button {
 }
 
 #highlights > li > button.btn-xs.btn-info.change-button {
@@ -713,6 +704,7 @@ footer {
       margin-top: 0.3em;
       font-weight: 400;
     }
+
     .caption-container {
       min-height: 100%;
       font-weight: 400;
@@ -872,13 +864,27 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
+   .front-page-buttons > button {
+      font-size: 1em;
+      margin-right: 0em;
+      margin-top: 0.3em;
+      font-weight: 400;
+    }
 
-  .show-text {
-    position: absolute;
-    top: 70px;
-    left: 30px;
-    width: 55%;
-  }
+   .caption-container {
+      min-height: 100%;
+      font-weight: 400;
+      margin: 0 auto;
+      width: 75%;
+      z-index: 10;
+    }
+
+    .show-text {
+      position: absolute;
+      top: 70px;
+      left: 30px;
+      width: 55%;
+    }
 
    #about {
       margin: 0 15%;
