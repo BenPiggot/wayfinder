@@ -7,9 +7,6 @@ places around the world.  Users can also learn from others by viewing the maps o
 maps, but you must create an account to build your own. To find out more, visit the site at http://wayfinder.so.
 
 ## Framework
-Built in a node.js/ExpressJS framework using a PostgreSQL database
-
-## APIs, JavaScript Libraries, and NPM Modules used
-Google Maps API, Bootstrap, jQuery, express, ejs, body-parser, bcrypt, geocoder, and sequelize.
+Built in a node.js/ExpressJS framework using a PostgreSQL for data storage. Also makes extensive use of the Google Maps API.
 
 
