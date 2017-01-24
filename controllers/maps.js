@@ -23,14 +23,14 @@ router.get("/create", function(req, res) {
   } else {
     req.flash('danger','You must be logged in to create a map.');
     res.redirect("/maps")
-    }
-  });
+  }
+});
 
 
 // Render about page
 router.get("/about", function(req, res) {
-    res.render("maps/about")
-    });
+  res.render("maps/about")
+});
 
 
 // Render edit page, only available to logged in users
@@ -47,25 +47,25 @@ router.get("/edit/:id", function(req, res) {
   } else {
     req.flash('danger','You must be logged in to edit a map.');
     res.redirect("/maps")
-    }
-  });
+  }
+});
 
 
 // Get add locations page, accessible from create map page
 router.get("/locations/:id", function(req, res) {
-if (req.getUser()) {
-var localId = parseInt(req.params.id);
-  db.map.find({
-    where:{id:localId},
-    include:[db.location]
-  }).then(function(map){
-    console.log(map)
-    res.render("maps/locations", {map: map, localId: req.params.id});
-  });
+  if (req.getUser()) {
+    var localId = parseInt(req.params.id);
+    db.map.find({
+      where:{id:localId},
+      include:[db.location]
+    }).then(function(map){
+      console.log(map)
+      res.render("maps/locations", {map: map, localId: req.params.id});
+    });
   } else {
     req.flash('danger','You must be logged in to edit a map.');
     res.redirect("/maps")
-    }
+  }
 });
 
 
@@ -109,32 +109,29 @@ router.post("/locations/:id", function(req, res) {
         req.flash('danger','Please enter a location name and city.');
         res.redirect("/maps/locations/" + req.params.id);
       }
-   }else{
-      req.flash('danger','You must be logged in to create a map.');
-      res.redirect('/');
-    }
-  });
+   } else{
+    req.flash('danger','You must be logged in to create a map.');
+    res.redirect('/');
+  }
+});
 
 
 // Edit user maps,  only available to logged in users
 router.post('/edit/:id', function(req, res) {
   if (req.body.mapName != "" || req.body.description != "") {
     db.map.find({ where: { id: req.params.id} }).then(function(map){
-      console.log(map.dataValues)
-      console.log(map.mapName)
-      console.log(req.body.mapName)
-        map.mapName = req.body.mapName
-        map.description = req.body.description
-        map.save().then(function() {
-      req.flash('success', 'Changes successfully saved.')
-      res.redirect("/maps/locations/" + req.params.id)
+      map.mapName = req.body.mapName
+      map.description = req.body.description
+      map.save().then(function() {
+        req.flash('success', 'Changes successfully saved.')
+        res.redirect("/maps/locations/" + req.params.id)
       });
     });
   } else {
-        req.flash('danger','No edits were made.')
-        res.redirect('/maps/locations/' + req.params.id)
+      req.flash('danger','No edits were made.')
+      res.redirect('/maps/locations/' + req.params.id)
     }
-})
+});
 
 
 
@@ -144,11 +141,11 @@ router.delete('/:id',function(req,res){
     db.map.destroy({where: {id: req.params.id}}).then(function(){
         res.send({result: true})
     });
-    }else{
-      req.flash('danger','You cannot delete this map.');
-      res.redirect('/');
-    }
-})
+    } else {
+    req.flash('danger','You cannot delete this map.');
+    res.redirect('/');
+  }
+});
 
 
 

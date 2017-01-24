@@ -20,8 +20,8 @@ router.get("/search", function(req, res) {
   }).then(function(map){
     var locals = {map: map}
     res.render("narratives/search", locals)
-  })
-})
+  });
+});
 
 
 // Renders individual user map list pages
@@ -32,8 +32,8 @@ router.get("/usermaps", function(req, res) {
   }).then(function(map){
     console.log(map.maps[0])
     res.render("narratives/usermaps", {map: map});
-  })
-})
+  });
+});
 
 
 // Renders show pages for individual user maps, available to all
