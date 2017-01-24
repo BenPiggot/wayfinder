@@ -24,20 +24,20 @@ app.use(function(req,res,next) {
   req.getUser = function() {
     return req.session.user || false;
   }
-  next()
-})
+  next();
+});
 
 // get logged-in user info
 app.use(function(req,res,next) {
   res.locals.loggedIn = req.getUser();
   next();
-})
+});
 
 //custom middleware for alerts
 app.use(function(req,res,next){
   res.locals.alerts=req.flash();
   next();
-})
+});
 
 
 app.set("view engine", "ejs")
@@ -48,7 +48,7 @@ app.use("/narratives", narrativesCtrl);
 
 app.get("/", function(req, res) {
   res.render("front");
-})
+});
 
 
 app.use(function(err, req, res, next) {
@@ -66,4 +66,4 @@ app.use(function(req, res, next) {
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server started ...")
-})
+});
